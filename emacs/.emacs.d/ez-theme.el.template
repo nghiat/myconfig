@@ -1,0 +1,34 @@
+(deftheme ez
+    "Inspired by chromium code search https://cs.chromium.org")
+
+(custom-theme-set-faces
+  'ez
+  '(default ((t (:background "{LB}" :foreground "{LF}"))))
+  '(font-lock-comment-face ((t (:foreground "{LCommentF}"))))
+  '(font-lock-string-face ((t (:foreground "{LStringF}"))))
+  '(font-lock-keyword-face ((t (:foreground "{LKeywordF}"))))
+  '(font-lock-builtin-face ((t (:foreground "{LF}"))))
+  '(font-lock-function-name-face ((t (:foreground "{LF}"))))
+  '(font-lock-variable-name-face ((t (:foreground "{LF}"))))
+  '(font-lock-type-face ((t (:foreground "{LF}"))))
+  '(font-lock-constant-face ((t (:foreground "{LF}"))))
+  '(highlight ((t (:background "{LCurrentLineB}"))))
+  '(isearch ((t (:background "{LSearchB}"))))
+  '(region ((t (:background "{LSelectionB}" :foreground "{LSelectionF}"))))
+
+  ;; company
+  '(company-preview-common ((t (:background "{LB}" :foreground "{LF}" :weight bold))))
+  '(company-scrollbar-bg ((t (:background "{LF}"))))
+  '(company-scrollbar-fg ((t (:foreground "{LB}"))))
+  '(company-tooltip ((t (:inherit 'highlight))))
+  '(company-tooltip-common ((t (:foreground "{LF}"))))
+  '(company-tooltip-common-selection ((t (:foreground "{LF}"))))
+  '(company-tooltip-selection ((t (:inherit 'highlight :weight bold))))
+
+  ;; evil
+  '(evil-ex-search ((t (:inherit 'isearch))))
+  '(evil-ex-lazy-highlight ((t (:inherit 'isearch))))
+  '(evil-ex-substitute-matches ((t (:inherit 'isearch))))
+  '(evil-ex-substitute-replacement ((t (:inherit 'isearch))))
+)
+(provide-theme 'ez)

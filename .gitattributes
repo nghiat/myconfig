@@ -1,0 +1,14 @@
+*.ahk text eol=crlf
+*.bat text eol=crlf
+*.reg text eol=crlf
+*.vssettings text eol=crlf
+
+*.el text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.template text eol=lf
+*.vim text eol=lf
+
+.gitattributes text eol=lf
+.gitignore text eol=lf

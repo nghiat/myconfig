@@ -1,0 +1,126 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+call plug#begin('~/.vim/plugged')
+Plug 'raimondi/delimitmate'
+Plug 'tikhomirov/vim-glsl'
+Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'SirVer/ultisnips'
+Plug 'w0rp/ale'
+Plug 'nacitar/a.vim'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'rhysd/vim-clang-format'
+Plug 'bronson/vim-trailing-whitespace'
+" All of your Plugs must be added before the following line
+call plug#end()            " required
+""""""""""Vim config""""""""""
+    set ignorecase
+    set smartcase
+    set autochdir
+    syntax on
+    if strftime("%H") >= 8 && strftime("%H") < 19
+      set background=light
+    else
+      set background=dark
+    endif
+    colorscheme ez
+    set cursorline
+    filetype plugin indent on    " required
+    filetype plugin on
+    "makes backspace work like most other apps
+    set backspace=indent,eol,start
+    "Set color for column 80th
+    set cc=80
+    set encoding=utf-8
+    set expandtab
+    "Enable switching between tabs without saving
+    set foldmethod=manual
+    set hidden
+    set incsearch
+    set notimeout
+    "Enable line number
+    set number
+    " Show line, column number
+    set ruler
+    "identation tab
+    set shiftwidth=2
+    "makes the backspace key treat the spaces like a tab
+    set softtabstop=2
+    set tabstop=2
+    set termguicolors
+    set wildcharm=<Tab>
+    set wildmenu
+    set wildmode=longest:full,full
+    "X11 clipboard
+    if has("unix")
+        set clipboard=unnamedplus
+    elseif has("win32")
+        set clipboard=unnamed
+    endif
+    "window default size
+    if has('gui_running')
+        set columns=100
+    endif
+    "Color scheme
+    if has("unix")
+        set t_8f=[38;2;%lu;%lu;%lum
+        set t_8b=[48;2;%lu;%lu;%lum
+    endif
+
+    "set gui font
+    if has('gui_running')
+        if has("unix")
+            set guifont=DejaVu\ Sans\ Mono\ 12
+        elseif has("win32")
+            set guifont=Consolas:h12:cANSI
+        endif
+        set guioptions-=L
+        set guioptions-=m
+        set guioptions-=r
+        set guioptions-=T
+    endif
+
+    " Shortcuts
+        " Switch between buffers
+        nnoremap <silent> <C-c>o :b#<CR>
+        vnoremap <silent> <C-c>o <C-c>:b#<CR>
+        inoremap <silent> <C-c>o <C-o>:b#<CR>
+        " Press Space to turn off highlighting and clear any message already displayed.
+        noremap <Space> :set hlsearch! hlsearch?<CR>
+        "map Ctrl-S to save
+        nnoremap <silent> <C-s> :update<CR>
+        vnoremap <silent> <C-s> <C-c>:update<CR>
+        inoremap <silent> <C-s> <C-o>:update<CR>
+        "Set Leader key
+        let mapleader="\<Space>"
+        noremap <leader>h <C-W>h<CR>
+        noremap <leader>j <C-W>j<CR>
+        noremap <leader>k <C-W>k<CR>
+        noremap <leader>l <C-W>l<CR>
+        nnoremap <C-c>e :e<Space><Tab>
+        vnoremap <C-c>e <C-c>:e<Space><Tab>
+        inoremap <C-c>e <C-o>:e<Space><Tab>
+        nnoremap <C-c>l :buffers<CR>:buffer<Space><Tab>
+        vnoremap <C-c>l <C-c>:buffers<CR>:buffer<Space><Tab>
+        inoremap <C-c>l <C-o>:buffers<CR>:buffer<Space><Tab>
+        nnoremap <C-c>r :browse oldfiles<CR>
+        vnoremap <C-c>r <C-c>:browse oldfiles<CR>
+        inoremap <C-c>r <C-o>:browse oldfiles<CR>
+
+""""""""""utilsnips""""""""""
+    let g:UltiSnipsExpandTrigger="<c-k>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+    let g:UltiSnipsJumpForwardTrigger="<c-k>"
+
+""""""""""vim-indent-guides""""""""""
+    let g:indent_guides_enable_on_vim_startup = 1
+
+""""""""""A""""""""""
+    nnoremap <silent> <C-c>s :A<CR>
+    vnoremap <silent> <C-c>s <C-c>:A<CR>
+    inoremap <silent> <C-c>s <C-o>:A<CR>
+
+""""""""""vim-clang-format""""""""""
+    autocmd FileType c,cpp,objc nnoremap <buffer><Leader>f :<C-u>ClangFormat<CR>
+    autocmd FileType c,cpp,objc vnoremap <buffer><Leader>f :ClangFormat<CR>
