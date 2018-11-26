@@ -47,26 +47,18 @@
 (use-package cmake-mode
   :mode ("CMakeLists.txt" "\\.cmake\\'"))
 
+(use-package cquery
+  :commands lsp-query-enable
+  :hook
+  ((c-mode c++-mode) . (lambda()
+                         (condition-case nil
+                             (lsp-cquery-enable)
+                           (user-error nil)))))
+
 (use-package column-enforce-mode
   :defer 5
   :config
   (global-column-enforce-mode t))
-
-(use-package company
-  :defer 5
-  :config
-  (define-key company-active-map (kbd "<tab>") #'company-complete-selection)
-  (define-key company-active-map (kbd "C-n") #'company-select-next)
-  (define-key company-active-map (kbd "C-p") #'company-select-previous)
-  (setq company-dabbrev-downcase nil)
-  (setq company-dabbrev-ignore-case nil)
-  (setq company-dabbrev-other-buffers 'all)
-  (setq company-idle-delay 0.1)
-  (setq company-minimum-prefix-length 2)
-  (setq company-show-numbers t)
-  (setq company-backends '(company-dabbrev))
-  :hook
-  (after-init . (lambda () (global-company-mode))))
 
 (use-package counsel
   :bind
@@ -126,6 +118,11 @@
   (setq enable-recursive-minibuffers t)
   (setq ivy-use-virtual-buffers t))
 
+(use-package ivy-xref
+  :after lsp-mode
+  :init
+  (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
+
 (use-package json-mode
   :mode "\\.json\\'"
   :hook
@@ -133,6 +130,10 @@
                  (fset 'format-code 'json-reformat-region)
                  (make-local-variable 'js-indent-level)
                  (setq js-indent-level 2))))
+
+(use-package lsp-mode
+  :defer t
+  :disabled t)
 
 (use-package lua-mode
   :mode "\\.lua\\'"

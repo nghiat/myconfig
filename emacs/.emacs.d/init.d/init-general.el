@@ -3,6 +3,7 @@
 (setq auto-window-vscroll nil)
 (setq column-number-mode t)
 (setq custom-safe-themes t)
+(setq dabbrev-case-fold-search nil)
 ;; Ignore whitespace
 (setq ediff-diff-options "-w")
 (setq ediff-split-window-function 'split-window-horizontally)
@@ -44,7 +45,8 @@
 (global-set-key (kbd "<f5>") 'shell-command)
 (global-set-key (kbd "<f6>") 'compile)
 (global-set-key (kbd "\C-s") 'save-buffer)
-
+(global-set-key (kbd "C-c i d") 'xref-find-definitions)
+(global-set-key (kbd "C-c i r") 'xref-find-references)
 ;; Theme by time of day
 (defun load-theme-by-hour ()
   (setq hour
@@ -76,6 +78,9 @@
 (setq-default mode-line-format
               '(;; value of current buffer name
                "(%b) "
+               "("
+               mode-line-mule-info
+               ") "
                ;; directory
                "("
                default-directory

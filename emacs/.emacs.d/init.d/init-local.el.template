@@ -1,2 +1,4 @@
+;; (setq cquery-executable "")
+;; (setq cquery-cache-dir "")
 ;; (setq enable-local-variables :all)
 (provide 'init-local)
