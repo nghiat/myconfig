@@ -79,6 +79,7 @@
   (fset 'evil-visual-update-x-selection 'ignore)
   (setq evil-symbol-word-search t)
   (setq evil-want-fine-undo t)
+  (setq undo-tree-enable-undo-in-region nil)
   :hook
   ((c++-mode gn-mode LaTeX-mode). (lambda () (setq evil-shift-width 2))))
 
@@ -147,10 +148,6 @@
   ("C-c m m p" . smerge-prev)
   :config
   (use-package evil-magit))
-
-(use-package nlinum
-  :config
-  (global-nlinum-mode))
 
 (use-package projectile
   :pin melpa-stable
