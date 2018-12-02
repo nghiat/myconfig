@@ -21,6 +21,7 @@ highlight clear Special
 highlight clear String
 highlight clear Statement
 highlight clear Type
+highlight clear VertSplit
 
 if &background == "light"
   highlight Normal ctermbg={tLB} ctermfg={tLF} guibg={LB} guifg={LF}
@@ -55,3 +56,4 @@ else
   highlight Pmenu ctermbg={tDCompletePopupB} ctermfg={tDCompletePopupF} guibg={DCompletePopupB} guifg={DCompletePopupF}
   highlight PmenuSel cterm=bold ctermbg={tDCompletePopupB} ctermfg={tDCompletePopupF} gui=bold guibg={DCompletePopupB} guifg={DCompletePopupF}
 endif
+highlight VertSplit ctermbg=bg ctermfg=bg guibg=bg guifg=bg

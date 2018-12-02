@@ -15,6 +15,8 @@
 (add-to-list 'load-path (expand-file-name "init.d" user-emacs-directory))
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
+(global-unset-key (kbd "C-q"))
+
 (require 'init-functions)
 (require 'init-general)
 (require 'init-packages)

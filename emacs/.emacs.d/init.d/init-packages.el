@@ -62,11 +62,11 @@
 
 (use-package counsel
   :bind
-  ("C-c c g" . counsel-ag)
+  ("C-q c g" . counsel-ag)
   ;; Files browsing
-  ("C-c e" . counsel-find-file)
+  ("C-q e" . counsel-find-file)
   ("M-x" . counsel-M-x)
-  ("C-c r" . counsel-recentf)
+  ("C-q r" . counsel-recentf)
   :config
   (use-package flx)
   (use-package smex
@@ -113,7 +113,7 @@
 
 (use-package ivy
   :bind
-  ("C-c l" . ivy-switch-buffer)
+  ("C-q l" . ivy-switch-buffer)
   :config
   (ivy-mode 1)
   (setq enable-recursive-minibuffers t)
@@ -142,16 +142,16 @@
 
 (use-package magit
   :bind
-  ("C-c m d" . magit-diff-buffer-file)
-  ("C-c m s" . magit-status)
-  ("C-c m m n" . smerge-next)
-  ("C-c m m p" . smerge-prev)
+  ("C-q m d" . magit-diff-buffer-file)
+  ("C-q m s" . magit-status)
+  ("C-q m m n" . smerge-next)
+  ("C-q m m p" . smerge-prev)
   :config
   (use-package evil-magit))
 
 (use-package projectile
   :pin melpa-stable
-  :bind-keymap ("C-c p" . projectile-command-map)
+  :bind-keymap ("C-q p" . projectile-command-map)
   :config
   (projectile-mode)
   (setq projectile-indexing-method 'alien)
@@ -174,7 +174,7 @@
 
 (use-package swiper
   :bind
-  ("C-c f" . swiper))
+  ("C-q f" . swiper))
 
 (use-package web-beautify
   :hook

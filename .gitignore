@@ -1,6 +1,7 @@
 __pycache__
 vim/vimfiles/plugged
 vim/vimfiles/colors/ez.vim
+vim/vimfiles/.netrwhist
 emacs/.emacs.d/*
 !emacs/.emacs.d/*.el
 emacs/.emacs.d/ez-theme.el

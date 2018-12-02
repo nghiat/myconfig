@@ -40,13 +40,13 @@
 (show-paren-mode 1)
 (tool-bar-mode -1)
 ;; Previous recently buffer
-(global-set-key (kbd "C-c o") 'mode-line-other-buffer)
-(global-set-key (kbd "C-c s") 'ff-get-other-file)
+(global-set-key (kbd "C-q o") 'mode-line-other-buffer)
+(global-set-key (kbd "C-q s") 'ff-get-other-file)
 (global-set-key (kbd "<f5>") 'shell-command)
 (global-set-key (kbd "<f6>") 'compile)
 (global-set-key (kbd "\C-s") 'save-buffer)
-(global-set-key (kbd "C-c i d") 'xref-find-definitions)
-(global-set-key (kbd "C-c i r") 'xref-find-references)
+(global-set-key (kbd "C-q i d") 'xref-find-definitions)
+(global-set-key (kbd "C-q i r") 'xref-find-references)
 ;; Theme by time of day
 (defun load-theme-by-hour ()
   (setq hour
