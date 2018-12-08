@@ -1,24 +1,27 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 call plug#begin('~/.vim/plugged')
-Plug 'raimondi/delimitmate'
 Plug 'tikhomirov/vim-glsl'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'SirVer/ultisnips'
 Plug 'nacitar/a.vim'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'rhysd/vim-clang-format'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'pdavydov108/vim-lsp-cquery'
 " All of your Plugs must be added before the following line
 call plug#end()            " required
 """"""""""Vim config""""""""""
     set ignorecase
     set smartcase
-    set autochdir
+    " Plays nicer with fzf than autochdir
+    autocmd BufEnter * silent! lcd %:p:h
+    :autocmd VimResized * wincmd =
     syntax on
     if strftime("%H") >= 8 && strftime("%H") < 19
       set background=light
@@ -47,7 +50,6 @@ call plug#end()            " required
     "makes the backspace key treat the spaces like a tab
     set softtabstop=2
     set tabstop=2
-    set termguicolors
     set wildcharm=<Tab>
     set wildmenu
     set wildmode=longest:full,full
@@ -86,12 +88,8 @@ call plug#end()            " required
     set statusline+=\ (%Y)
     set statusline+=\ (%l:%c)
     " Shortcuts
-        " Switch between buffers
-        nnoremap <silent> <C-q>o :b#<CR>
-        vnoremap <silent> <C-q>o <C-c>:b#<CR>
-        inoremap <silent> <C-q>o <C-o>:b#<CR>
         " Press Space to turn off highlighting and clear any message already displayed.
-        noremap <Space> :set hlsearch! hlsearch?<CR>
+        " noremap <Space> :set hlsearch! hlsearch?<CR>
         "map Ctrl-S to save
         nnoremap <silent> <C-s> :update<CR>
         vnoremap <silent> <C-s> <C-c>:update<CR>
@@ -102,48 +100,61 @@ call plug#end()            " required
         noremap <leader>j <C-W>j<CR>
         noremap <leader>k <C-W>k<CR>
         noremap <leader>l <C-W>l<CR>
-
-""""""""""utilsnips""""""""""
-    let g:UltiSnipsExpandTrigger="<c-k>"
-    let g:UltiSnipsJumpBackwardTrigger="<c-j>"
-    let g:UltiSnipsJumpForwardTrigger="<c-k>"
-
-""""""""""vim-indent-guides""""""""""
-    let g:indent_guides_enable_on_vim_startup = 1
+        noremap <leader>wc :close<CR>
+        noremap <leader>wo :only<CR>
+        noremap <leader>bd :bp\|bd #<CR>
+        " Switch to most recent buffer
+        nnoremap <silent> <leader>o :b#<CR>
+        vnoremap <silent> <leader>o <C-c>:b#<CR>
 
 """"""""""A""""""""""
-    nnoremap <silent> <C-q>s :A<CR>
-    vnoremap <silent> <C-q>s <C-c>:A<CR>
-    inoremap <silent> <C-q>s <C-o>:A<CR>
+    nnoremap <silent> <leader>s :A<CR>
+    vnoremap <silent> <leader>s <C-c>:A<CR>
 
 """"""""""vim-clang-format""""""""""
-    autocmd FileType c,cpp,objc nnoremap <buffer><Leader>f :<C-u>ClangFormat<CR>
     autocmd FileType c,cpp,objc vnoremap <buffer><Leader>f :ClangFormat<CR>
 
 """"""""""fzf""""""""""
-    nnoremap <C-q>p :GFiles<CR>
-    vnoremap <C-q>p <C-c>:GFiles<CR>
-    inoremap <C-q>p <C-o>:GFiles<CR>
-    nnoremap <C-q>e :Files .
-    vnoremap <C-q>e <C-c>:Files .
-    inoremap <C-q>e <C-o>:Files .
-    nnoremap <C-q>l :Buffers<CR>
-    vnoremap <C-q>l <C-c>:Buffers<CR>
-    inoremap <C-q>l <C-o>:Buffers<CR>
-    nnoremap <C-q>r :History<CR>
-    vnoremap <C-q>r <C-c>:History<CR>
-    inoremap <C-q>r <C-o>:History<CR>
+    nnoremap <leader>p<Space> :GFiles<CR>
+    vnoremap <leader>p<Space> <C-c>:GFiles<CR>
+    nnoremap <leader>e :Files .
+    vnoremap <leader>e <C-c>:Files .
+    nnoremap <leader>; :Buffers<CR>
+    vnoremap <leader>; <C-c>:Buffers<CR>
+    nnoremap <leader>r :History<CR>
+    vnoremap <leader>r <C-c>:History<CR>
     let g:fzf_colors =
-    \ { 'fg':      ['fg', 'Normal'],
-      \ 'bg':      ['bg', 'Normal'],
-      \ 'hl':      ['fg', 'Comment'],
-      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-      \ 'hl+':     ['fg', 'Statement'],
-      \ 'info':    ['fg', 'PreProc'],
-      \ 'border':  ['fg', 'Ignore'],
-      \ 'prompt':  ['fg', 'Conditional'],
-      \ 'pointer': ['fg', 'Exception'],
-      \ 'marker':  ['fg', 'Keyword'],
-      \ 'spinner': ['fg', 'Label'],
-      \ 'header':  ['fg', 'Comment'] }
+    \ { 'fg': ['fg', 'Normal'],
+      \ 'bg': ['bg', 'Normal'],
+      \ 'hl': ['hl', 'Search'],
+      \ 'fg+': ['fg', 'Normal'],
+      \ 'bg+': ['bg', 'CursorLine'],
+      \ 'hl+': ['hl', 'Search']}
+
+""""""""""vim-lsp""""""""""
+    nnoremap <leader>id :LspDefinition<CR>
+    vnoremap <leader>id <C-c>:LspDefinition<CR>
+    nnoremap <leader>ir :LspReferences<CR>
+    vnoremap <leader>ir <C-c>:LspReferences<CR>
+    nnoremap <leader>ii :LspImplementation<CR>
+    vnoremap <leader>ii <C-c>:LspImplementation<CR>
+    autocmd FileType c,cc,cpp,cxx,h,hpp nnoremap <leader>ip :LspCqueryBase<CR>
+    autocmd FileType c,cc,cpp,cxx,h,hpp vnoremap <leader>ip <C-c>:LspCqueryBase<CR>
+    autocmd FileType c,cc,cpp,cxx,h,hpp nnoremap <leader>ic :LspCqueryDerived<CR>
+    autocmd FileType c,cc,cpp,cxx,h,hpp vnoremap <leader>ic <C-c>:LspCqueryDerived<CR>
+    " ~/.vim/autoload/cquery.vim
+    call cquery#init()
+
+""""""""""fugitive""""""""""
+    nnoremap <leader>vd :Gdiff<CR>
+    vnoremap <leader>vd <C-c>:Gdiff<CR>
+    nnoremap <leader>va :Gw<CR>
+    vnoremap <leader>va <C-c>:Gw<CR>
+    nnoremap <leader>vs :Gstatus<CR>
+    vnoremap <leader>vs <C-c>:Gstatus<CR>
+    nnoremap <leader>vc :Gcommit<CR>
+    vnoremap <leader>vc <C-c>:Gcommit<CR>
+    nnoremap <leader>vp :Gpush<CR>
+    vnoremap <leader>vp <C-c>:Gpush<CR>
+    nnoremap <leader>vf :Gpull<CR>
+    vnoremap <leader>vf <C-c>:Gpull<CR>
