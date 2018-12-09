@@ -12,13 +12,31 @@
 
 ;; Install 'use-package' if necessary
 (package-initialize)
-(unless (package-installed-p 'use-package)
+(unless (and (package-installed-p 'use-package)
+             (package-installed-p 'general))
   (package-refresh-contents)
-  (package-install 'use-package))
+  (package-install 'use-package)
+  (package-install 'general))
 
 ;; Enable use-package
 (require 'use-package)
 (setq use-package-always-ensure t)
+
+(require 'general)
+;; Global bindings
+(general-define-key
+ :states '(normal visual)
+ :prefix "SPC"
+ "o" 'mode-line-other-buffer
+ "s" 'ff-get-other-file
+ "f" 'format-code
+ "h" 'windmove-left
+ "j" 'windmove-down
+ "k" 'windmove-up
+ "l" 'windmove-right
+ "wc" 'delete-window
+ "wo" 'delete-other-windows
+ "bd" 'kill-this-buffer)
 
 (use-package auctex
   :mode ("\\.tex\\'" . TeX-latex-mode)
@@ -61,12 +79,13 @@
   (global-column-enforce-mode t))
 
 (use-package counsel
-  :bind
-  ("C-q c g" . counsel-ag)
-  ;; Files browsing
-  ("C-q e" . counsel-find-file)
-  ("M-x" . counsel-M-x)
-  ("C-q r" . counsel-recentf)
+  :general
+  ("M-x" 'counsel-M-x)
+  (:states '(normal visual)
+           :prefix "SPC"
+            "cg" 'counsel-ag
+            "e" 'counsel-find-file
+            "r" 'counsel-recentf)
   :config
   (use-package flx)
   (use-package smex
@@ -83,23 +102,13 @@
   :hook
   ((c++-mode gn-mode LaTeX-mode). (lambda () (setq evil-shift-width 2))))
 
-(use-package evil-leader
-  :after evil
-  :config
-  (evil-leader/set-key
-    "h" 'evil-window-left
-    "j" 'evil-window-down
-    "k" 'evil-window-up
-    "l" 'evil-window-right
-    "f" 'format-code)
-  (evil-leader/set-leader "<SPC>")
-  (global-evil-leader-mode))
-
 (use-package evil-visualstar
+  :after evil
   :config
   (global-evil-visualstar-mode))
 
 (use-package flycheck
+  :defer t
   :hook
   (python-mode . (lambda()
                    (flycheck-mode 1)
@@ -112,8 +121,10 @@
   :mode ("BUILD.gn" "\\.gni\\'"))
 
 (use-package ivy
-  :bind
-  ("C-q l" . ivy-switch-buffer)
+  :general
+  (:states '(normal visual)
+           :prefix "SPC"
+           ";" 'ivy-switch-buffer)
   :config
   (ivy-mode 1)
   (setq enable-recursive-minibuffers t)
@@ -141,17 +152,24 @@
   :interpreter "lua")
 
 (use-package magit
-  :bind
-  ("C-q m d" . magit-diff-buffer-file)
-  ("C-q m s" . magit-status)
-  ("C-q m m n" . smerge-next)
-  ("C-q m m p" . smerge-prev)
+  :general
+  (:states '(normal visual)
+           :prefix "SPC"
+           "vc" 'magit-commit
+           "vd" 'magit-diff-buffer-file
+           "vf" 'magit-pull
+           "vp" 'magit-push
+           "vs" 'magit-status)
   :config
   (use-package evil-magit))
 
 (use-package projectile
+  :defer t
   :pin melpa-stable
-  :bind-keymap ("C-q p" . projectile-command-map)
+  :general
+  (:states '(normal visual)
+           :prefix "SPC"
+           "p" '(:keymap projectile-command-map))
   :config
   (projectile-mode)
   (setq projectile-indexing-method 'alien)
@@ -165,16 +183,11 @@
   :config
   (autoload 'qml-mode "qml-mode" "Editing Qt Declarative." t))
 
-(use-package ranger
-  :bind ("<f7>" . ranger))
-
-(use-package sr-speedbar
-  :bind
-  ("<f8>" . sr-speedbar-toggle))
-
 (use-package swiper
-  :bind
-  ("C-q f" . swiper))
+  :general
+  (:states '(normal visual)
+           :prefix "SPC"
+           "/" 'swiper))
 
 (use-package web-beautify
   :hook
