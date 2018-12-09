@@ -12,6 +12,7 @@ extension_ids = [
     "robertohuertasm.vscode-icons",
     "vscodevim.vim",
     "xaver.clang-format",
+    "cquery-project.cquery",
 ]
 
 files = ["keybindings.json", "settings.json"]

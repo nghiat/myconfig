@@ -18,9 +18,7 @@
   "jake.autoDetect": "off",
   "gulp.autoDetect": "off",
   "npm.autoDetect": "off",
-  "window.menuBarVisibility": "toggle",
   "workbench.colorTheme": "Default Light+",
-  "workbench.editor.showTabs": false,
   "editor.tokenColorCustomizations": {
     "functions": "#000000",
     "comments": "#880000",
@@ -32,7 +30,6 @@
   },
   "workbench.startupEditor": "newUntitledFile",
   "workbench.iconTheme": "vscode-icons",
-  "workbench.activityBar.visible": false,
 
   // Vim
   "vim.hlsearch": true,
@@ -41,7 +38,19 @@
   "vim.leader": "<space>",
   "vim.useSystemClipboard": true,
   "vim.visualstar": true,
-  "vim.otherModesKeyBindingsNonRecursive": [
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", ";"],
+      "commands": [
+        "workbench.action.quickOpen",
+      ]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": [
+        "workbench.action.quickOpen",
+      ]
+    },
     {
       "before": ["<leader>", "h"],
       "after": ["<C-w>", "h"],
@@ -52,14 +61,80 @@
     },
     {
       "before": ["<leader>", "f"],
-      "after": [],
       "commands": [
-        {
-          "command": "editor.action.formatSelection",
-          "args": []
-        }
+        "editor.action.formatSelection",
       ]
-    }
+    },
+    {
+      "before": ["<leader>", "o"],
+      "commands": [
+        "workbench.action.openNextRecentlyUsedEditorInGroup",
+      ]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": [
+        "workbench.action.openRecent",
+      ]
+    },
+    {
+      "before": ["<leader>", "s"],
+      "commands": [
+        "C_Cpp.SwitchHeaderSource",
+      ]
+    },
+
+    // code nav
+    {
+      "before": ["<leader>", "i", "d"],
+      "commands": [
+        "editor.action.goToDeclaration",
+      ]
+    },
+    {
+      "before": ["<leader>", "i", "i"],
+      "commands": [
+        "editor.action.goToDeclaration",
+      ]
+    },
+    {
+      "before": ["<leader>", "i", "r"],
+      "commands": [
+        "editor.action.referenceSearch.trigger",
+      ]
+    },
+
+    // git
+    {
+      "before": ["<leader>", "v", "a"],
+      "commands": [
+        "git.stage",
+      ]
+    },
+    {
+      "before": ["<leader>", "v", "c"],
+      "commands": [
+        "git.commit",
+      ]
+    },
+    {
+      "before": ["<leader>", "v", "f"],
+      "commands": [
+        "git.pull",
+      ]
+    },
+    {
+      "before": ["<leader>", "v", "p"],
+      "commands": [
+        "git.push",
+      ]
+    },
+    {
+      "before": ["<leader>", "v", "s"],
+      "commands": [
+        "workbench.view.scm",
+      ]
+    },
   ],
   "workbench.statusBar.feedback.visible": false,
   "vsicons.dontShowNewVersionMessage": true,
