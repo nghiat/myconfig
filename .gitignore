@@ -1,4 +1,5 @@
 __pycache__
+vim/vimfiles/autoload/cquery.vim
 vim/vimfiles/plugged
 vim/vimfiles/colors/ez.vim
 vim/vimfiles/.netrwhist
