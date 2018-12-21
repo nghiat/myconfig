@@ -11,9 +11,6 @@ Plug 'rhysd/vim-clang-format'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'pdavydov108/vim-lsp-cquery'
 " All of your Plugs must be added before the following line
 call plug#end()            " required
 """"""""""Vim config""""""""""
@@ -81,12 +78,15 @@ call plug#end()            " required
         set guioptions-=r
         set guioptions-=T
     endif
+
     set laststatus=2
     set statusline=(%t)
     set statusline+=\ (%{&ff})
     set statusline+=\ (%F)
     set statusline+=\ (%Y)
     set statusline+=\ (%l:%c)
+
+    set noswapfile
     " Shortcuts
         " Press Space to turn off highlighting and clear any message already displayed.
         " noremap <Space> :set hlsearch! hlsearch?<CR>
@@ -108,6 +108,7 @@ call plug#end()            " required
         vnoremap <silent> <leader>o <C-c>:b#<CR>
 
 """"""""""A""""""""""
+    let g:alternateNoDefaultAlternate = 1
     nnoremap <silent> <leader>s :A<CR>
     vnoremap <silent> <leader>s <C-c>:A<CR>
 
@@ -117,8 +118,8 @@ call plug#end()            " required
 """"""""""fzf""""""""""
     nnoremap <leader>p<Space> :GFiles<CR>
     vnoremap <leader>p<Space> <C-c>:GFiles<CR>
-    nnoremap <leader>e :Files .
-    vnoremap <leader>e <C-c>:Files .
+    nnoremap <leader>e :Files .<CR>
+    vnoremap <leader>e <C-c>:Files .<CR>
     nnoremap <leader>; :Buffers<CR>
     vnoremap <leader>; <C-c>:Buffers<CR>
     nnoremap <leader>r :History<CR>
@@ -130,20 +131,6 @@ call plug#end()            " required
       \ 'fg+': ['fg', 'Normal'],
       \ 'bg+': ['bg', 'CursorLine'],
       \ 'hl+': ['hl', 'Search']}
-
-""""""""""vim-lsp""""""""""
-    nnoremap <leader>id :LspDefinition<CR>
-    vnoremap <leader>id <C-c>:LspDefinition<CR>
-    nnoremap <leader>ir :LspReferences<CR>
-    vnoremap <leader>ir <C-c>:LspReferences<CR>
-    nnoremap <leader>ii :LspImplementation<CR>
-    vnoremap <leader>ii <C-c>:LspImplementation<CR>
-    autocmd FileType c,cc,cpp,cxx,h,hpp nnoremap <leader>ip :LspCqueryBase<CR>
-    autocmd FileType c,cc,cpp,cxx,h,hpp vnoremap <leader>ip <C-c>:LspCqueryBase<CR>
-    autocmd FileType c,cc,cpp,cxx,h,hpp nnoremap <leader>ic :LspCqueryDerived<CR>
-    autocmd FileType c,cc,cpp,cxx,h,hpp vnoremap <leader>ic <C-c>:LspCqueryDerived<CR>
-    " ~/.vim/autoload/cquery.vim
-    call cquery#init()
 
 """"""""""fugitive""""""""""
     nnoremap <leader>vd :Gdiff<CR>
