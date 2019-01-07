@@ -145,3 +145,6 @@ call plug#end()            " required
     vnoremap <leader>vp <C-c>:Gpush<CR>
     nnoremap <leader>vf :Gpull<CR>
     vnoremap <leader>vf <C-c>:Gpull<CR>
+
+""""""""""vim-commentary""""""""""
+    autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
