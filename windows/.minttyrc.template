@@ -1,5 +1,6 @@
 BoldAsFont = no
 BoldAsColour = no
+CursorType=block
 Font = Consolas
 FontHeight = 12
 FontSmoothing = default
