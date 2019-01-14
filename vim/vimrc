@@ -37,6 +37,7 @@ call plug#end()            " required
     set expandtab
     "Enable switching between tabs without saving
     set foldmethod=manual
+    set guicursor+=a:blinkon0
     set hidden
     set incsearch
     set notimeout
