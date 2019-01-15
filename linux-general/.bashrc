@@ -1,6 +1,6 @@
 export PATH="/bin:/usr/bin:$PATH";
 export EDITOR="vim"
-export PS1="\[\e[1;30m\]\u:\w$ \[\e[0m\]"
+export PS1="\[\e[1m\]\u:\w$ \[\e[0m\]"
 export HISTSIZE=100000
 export HISTFILESIZE=100000
 export PROMPT_COMMAND="history -a; history -c; history -r;"
@@ -22,3 +22,11 @@ stty -ixon
 shopt -s checkwinsize
 
 force_color_prompt=yes
+
+# Set urxvt colors based on time
+hour=$(date +"%H")
+if [ $hour -ge 8 ] && [ $hour -lt 19 ]; then
+  xrdb -merge ~/.Xresources.light
+else
+  xrdb -merge ~/.Xresources.dark
+fi

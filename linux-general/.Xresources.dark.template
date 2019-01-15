@@ -1,0 +1,4 @@
+URxvt.cursorColor: {White}
+*background: {Black}
+*foreground: {White}
+*cursorColor: {White}
