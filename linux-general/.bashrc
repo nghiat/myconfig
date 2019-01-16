@@ -23,10 +23,4 @@ shopt -s checkwinsize
 
 force_color_prompt=yes
 
-# Set urxvt colors based on time
-hour=$(date +"%H")
-if [ $hour -ge 8 ] && [ $hour -lt 19 ]; then
-  xrdb -merge ~/.Xresources.light
-else
-  xrdb -merge ~/.Xresources.dark
-fi
+source .ez_colors

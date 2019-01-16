@@ -1,0 +1,36 @@
+# This file is generated from .ez_colors.template.
+# Set urxvt colors based on time.
+hour=$(date +"%H")
+#Sync these hours with vim and emacs.
+if [ $hour -ge 8 ] && [ $hour -lt 19 ]; then
+  # foreground
+  echo -ne '\e]10;{Black}\a'
+  # background
+  echo -ne '\e]11;{White}\a'
+  # cursor
+  echo -ne '\e]12;{Black}\a'
+else
+  # foreground
+  echo -ne '\e]10;{White}\a'
+  # background
+  echo -ne '\e]11;{Black}\a'
+  # cursor
+  echo -ne '\e]12;{White}\a'
+fi
+
+echo -ne '\e]30;{Black}\a'
+echo -ne '\e]31;{Red}\a'
+echo -ne '\e]32;{Green}\a'
+echo -ne '\e]33;{Yellow}\a'
+echo -ne '\e]34;{Blue}\a'
+echo -ne '\e]35;{Magenta}\a'
+echo -ne '\e]36;{Cyan}\a'
+echo -ne '\e]37;{White}\a'
+echo -ne '\e]40;{Black}\a'
+echo -ne '\e]41;{Red}\a'
+echo -ne '\e]42;{Green}\a'
+echo -ne '\e]43;{Yellow}\a'
+echo -ne '\e]44;{Blue}\a'
+echo -ne '\e]45;{Magenta}\a'
+echo -ne '\e]46;{Cyan}\a'
+echo -ne '\e]47;{White}\a'

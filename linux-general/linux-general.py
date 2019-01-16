@@ -1,9 +1,7 @@
 from scripts.subprocess_wrapper import run_script, run_command
 
 colors_templates = {
-    ".Xdefaults.template": "~/.Xdefaults",
-    ".Xresources.light.template": "~/.Xresources.light",
-    ".Xresources.dark.template": "~/.Xresources.dark",
+    ".ez_colors.template": "~/.ez_colors",
 }
 
 links = {
@@ -12,6 +10,7 @@ links = {
     "~/.config/mpv/mpv.conf": "mpv.conf",
     "~/.inputrc": ".inputrc",
     "~/.tmux.conf": ".tmux.conf",
+    "~/.Xdefaults": ".Xdefaults",
     "~/.xprofile": ".xprofile",
     "~/.xbindkeysrc": ".xbindkeysrc",
     "/etc/X11/xorg.conf.d/00-custom-kdb.conf": "00-custom-kdb.conf",

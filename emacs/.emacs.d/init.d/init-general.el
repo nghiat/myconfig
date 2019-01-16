@@ -45,6 +45,7 @@
 ;; (global-set-key (kbd "C-q i d") 'xref-find-definitions)
 ;; (global-set-key (kbd "C-q i r") 'xref-find-references)
 ;; Theme by time of day
+;; Sync these hours with vim and bash
 (defun load-theme-by-hour ()
   (setq hour
         (string-to-number

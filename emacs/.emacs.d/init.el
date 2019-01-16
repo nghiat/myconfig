@@ -1,5 +1,12 @@
 ;; These config will be restored to the default values after-init-hook
 ;; https://www.reddit.com/r/emacs/comments/3kqt6e/2_easy_little_known_steps_to_speed_up_emacs_start/
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (defvar file-name-handler-alist-old file-name-handler-alist)
 (setq file-name-handler-alist nil)
 (setq gc-cons-threshold 402653184)

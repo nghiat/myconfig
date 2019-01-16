@@ -36,35 +36,3 @@ URxvt.cursorUnderline:      false
 
 ! Pointer
 URxvt.pointerBlank:         true
-
-! black dark/light
-*color0: {Black}
-*color8: {Black}
-
-!! red dark/light
-*color1: {Red}
-*color9: {Red}
-
-!! green dark/light
-*color2: {Green}
-*color10: {Green}
-
-!! yellow dark/light
-*color3: {Yellow}
-*color11: {Yellow}
-
-!! blue dark/light
-*color4: {Blue}
-*color12: {Blue}
-
-!! magenta dark/light
-*color5: {Magenta}
-*color13: {Magenta}
-
-!! cyan dark/light
-*color6: {Cyan}
-*color14: {Cyan}
-
-!! white dark/light
-*color7: {White}
-*color15: {White}
