@@ -23,4 +23,4 @@ shopt -s checkwinsize
 
 force_color_prompt=yes
 
-source .ez_colors
+source ~/.ez_colors

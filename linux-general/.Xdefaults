@@ -36,3 +36,7 @@ URxvt.cursorUnderline:      false
 
 ! Pointer
 URxvt.pointerBlank:         true
+
+! Dynamic colors
+xterm.dynamicColors: true
+urxvt.dynamicColors: on
