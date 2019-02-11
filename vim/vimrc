@@ -14,6 +14,7 @@ Plug 'junegunn/fzf.vim'
 " All of your Plugs must be added before the following line
 call plug#end()            " required
 """"""""""Vim config""""""""""
+    set autoread
     set ignorecase
     set smartcase
     " Plays nicer with fzf than autochdir
