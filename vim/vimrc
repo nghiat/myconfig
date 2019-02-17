@@ -16,6 +16,7 @@ call plug#end()            " required
 """"""""""Vim config""""""""""
     set autoread
     set ignorecase
+    set wildignorecase
     set smartcase
     " Plays nicer with fzf than autochdir
     autocmd BufEnter * silent! lcd %:p:h
