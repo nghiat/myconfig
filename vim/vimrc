@@ -100,10 +100,10 @@ call plug#end()            " required
         inoremap <silent> <C-s> <C-o>:update<CR>
         "Set Leader key
         let mapleader="\<Space>"
-        noremap <leader>h <C-W>h<CR>
-        noremap <leader>j <C-W>j<CR>
-        noremap <leader>k <C-W>k<CR>
-        noremap <leader>l <C-W>l<CR>
+        noremap <leader>h <C-W>h
+        noremap <leader>j <C-W>j
+        noremap <leader>k <C-W>k
+        noremap <leader>l <C-W>l
         noremap <leader>wc :close<CR>
         noremap <leader>wo :only<CR>
         noremap <leader>bd :bp\|bd #<CR>
