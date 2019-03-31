@@ -8,6 +8,7 @@ links = {
     "~/.bash_profile": ".bash_profile",
     "~/.bashrc": ".bashrc",
     "~/.config/mpv/mpv.conf": "mpv.conf",
+    "~/.gdbinit": ".gdbinit",
     "~/.inputrc": ".inputrc",
     "~/.tmux.conf": ".tmux.conf",
     "~/.Xdefaults": ".Xdefaults",
