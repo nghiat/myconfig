@@ -91,6 +91,7 @@ call plug#end()            " required
     set statusline+=\ (%l:%c)
 
     set noswapfile
+    set tags=tags;
     " Shortcuts
         " Press Space to turn off highlighting and clear any message already displayed.
         " noremap <Space> :set hlsearch! hlsearch?<CR>
@@ -110,6 +111,7 @@ call plug#end()            " required
         " Switch to most recent buffer
         nnoremap <silent> <leader>o :b#<CR>
         vnoremap <silent> <leader>o <C-c>:b#<CR>
+        autocmd FileType gn noremap <Leader>f :py3f ~/myconfig/vim/gn-format.py<CR>
 
 """"""""""A""""""""""
     let g:alternateNoDefaultAlternate = 1
