@@ -42,6 +42,7 @@ call plug#end()            " required
     set foldmethod=manual
     set guicursor+=a:blinkon0
     set hidden
+    set history=1000
     set incsearch
     set notimeout
     " Show line, column number
@@ -51,7 +52,7 @@ call plug#end()            " required
     "makes the backspace key treat the spaces like a tab
     set softtabstop=2
     set tabstop=2
-    set viminfo='9999,<9999,:9999
+    set viminfo='1000,<1000,:1000,s10,h
     set wildcharm=<Tab>
     set wildmenu
     set wildmode=longest:full,full
