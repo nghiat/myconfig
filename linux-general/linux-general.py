@@ -8,26 +8,33 @@ links = {
     "~/.bash_profile": ".bash_profile",
     "~/.bashrc": ".bashrc",
     "~/.config/mpv/mpv.conf": "mpv.conf",
+    "~/.config/pulse/default.pa": "default.pa",
     "~/.gdbinit": ".gdbinit",
     "~/.inputrc": ".inputrc",
     "~/.tmux.conf": ".tmux.conf",
     "~/.Xdefaults": ".Xdefaults",
     "~/.xprofile": ".xprofile",
     "~/.xbindkeysrc": ".xbindkeysrc",
-    "/etc/X11/xorg.conf.d/00-custom-kdb.conf": "00-custom-kdb.conf",
 }
 
 note = '''
 tmux
 xsel
 urxvt
-redshift-gtk
+redshift
 python-xdg
 xbindkeys
 mpv
 bash-completion
 ibus: Ubuntu im-config, Untick Use system keyboard layout
-tmux <prefix>-I'''
+tmux <prefix>-I
+dropbox
+pulseaudio
+pulseaudio-alsa
+google-chrome
+systemd-timesyncd
+noto-fonts
+noto-fonts-cjk'''
 
 
 def setup():

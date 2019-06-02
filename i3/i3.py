@@ -12,8 +12,10 @@ links = {
 
 def setup():
     run_command("sudo systemctl enable i3lock@{}.service".format(getpass.getuser()))
+    run_command("systemctl --user enable redshift")
 
 note = """
+i3
 network-manager-applet
 compton
 gnome-keyring
@@ -27,7 +29,6 @@ xf86-input-synaptics
 acpid
 xsel
 xorg-xbacklight
-pulseaudio
 arandr
 xinit
 udisks2
@@ -36,4 +37,5 @@ gvfs-mtp
 gvfs-smb
 lxsession
 xfce-i3-workspaces-plugin(-git)
+xfce4-battery-plugin
 """
