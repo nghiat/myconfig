@@ -113,6 +113,12 @@ call plug#end()            " required
         " Switch to most recent buffer
         nnoremap <silent> <leader>o :b#<CR>
         vnoremap <silent> <leader>o <C-c>:b#<CR>
+        " Preserve cursor position when switching between buffers.
+        " https://stackoverflow.com/questions/4251533/vim-keep-window-position-when-switching-buffers
+        if v:version >= 700
+          au BufLeave * let b:winview = winsaveview()
+          au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+        endif
         autocmd FileType gn noremap <Leader>f :py3f ~/myconfig/vim/gn-format.py<CR>
 
 """"""""""A""""""""""
