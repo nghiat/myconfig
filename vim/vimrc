@@ -11,6 +11,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'ludovicchabant/vim-gutentags'
 " All of your Plugs must be added before the following line
 call plug#end()            " required
 """"""""""Vim config""""""""""
@@ -93,7 +94,7 @@ call plug#end()            " required
     set statusline+=\ (%l:%c)
 
     set noswapfile
-    set tags=tags;
+    set tags=./tags;
     " Shortcuts
         " Press Space to turn off highlighting and clear any message already displayed.
         " noremap <Space> :set hlsearch! hlsearch?<CR>
@@ -109,6 +110,8 @@ call plug#end()            " required
         noremap <leader>l <C-W>l
         noremap <leader>wc :close<CR>
         noremap <leader>wo :only<CR>
+        noremap <leader>wv :vs<CR>
+        noremap <leader>wh :sp<CR>
         noremap <leader>bd :bp\|bd #<CR>
         " Switch to most recent buffer
         nnoremap <silent> <leader>o :b#<CR>
