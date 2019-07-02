@@ -17,3 +17,4 @@ windows/.minttyrc
 *.exe
 *.swp
 .Xdefaults
+tags
