@@ -4,6 +4,7 @@ from scripts.subprocess_wrapper import run_command
 note = """clink
 autohotkey
 vcxsrv
+Ultimate Windows Tweaker
 QTTabBar
 Preview pane
 Folder Options: Quick access
