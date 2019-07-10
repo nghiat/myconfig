@@ -3,12 +3,15 @@ from scripts.subprocess_wrapper import run_command
 
 note = """clink
 autohotkey
-vs-ez
 vcxsrv
 QTTabBar
 Preview pane
 Folder Options: Quick access
 Edit and run: edit_with_vim.reg
+
+Visual Studio:
+  - Color Theme Editor
+  - nghiatt.vssettings
 """
 
 colors_templates = {
