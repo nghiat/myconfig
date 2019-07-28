@@ -5,7 +5,6 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'nacitar/a.vim'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'rhysd/vim-clang-format'
 Plug 'bronson/vim-trailing-whitespace'
@@ -126,8 +125,8 @@ call plug#end()            " required
 
 """"""""""A""""""""""
     let g:alternateNoDefaultAlternate = 1
-    nnoremap <silent> <leader>s :A<CR>
-    vnoremap <silent> <leader>s <C-c>:A<CR>
+    nnoremap <silent> <leader>s :FastSwitch<CR>
+    vnoremap <silent> <leader>s <C-c>:FastSwitch<CR>
 
 """"""""""vim-clang-format""""""""""
     autocmd FileType c,cpp,objc vnoremap <buffer><Leader>f :ClangFormat<CR>
