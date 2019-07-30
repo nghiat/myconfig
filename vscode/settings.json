@@ -141,4 +141,11 @@
   "python.unitTest.unittestEnabled": false,
   "python.unitTest.pyTestEnabled": true,
   "python.unitTest.nosetestsEnabled": false,
+  "vsicons.projectDetection.disableDetect": true,
+  "[json]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
 }
