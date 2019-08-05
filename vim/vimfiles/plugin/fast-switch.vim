@@ -29,7 +29,7 @@ endfunction
 function! FastSwitch()
   let fullPath = expand('%:p')
   let ext = expand("%:e")
-  let fullPathWithoutExt = substitute(fullPath, "." . ext, ".", "")
+  let fullPathWithoutExt = substitute(fullPath, '\.' . ext, '\.', "")
   if s:FastSwitchBetween(fullPathWithoutExt, ext, ["c", "cpp", "cc"], ["h", "hpp"])
     return
   elseif s:FastSwitchBetween(fullPathWithoutExt, ext, ["inl"], ["h", "hpp"])
