@@ -34,7 +34,8 @@ pulseaudio-alsa
 google-chrome
 systemd-timesyncd
 noto-fonts
-noto-fonts-cjk'''
+noto-fonts-cjk
+gem install tmuxinator'''
 
 
 def setup():
@@ -42,3 +43,4 @@ def setup():
     run_command("git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm")
     # Intel vtune
     run_command("echo kernel.yama.ptrace_scope=0 | sudo tee /etc/sysctl.d/10-ptrace.conf > /dev/null")
+    run_command("cp ~/myconfig/linux-general/.tmux-local.conf ~")
