@@ -1,6 +1,6 @@
 export PATH="/bin:/usr/bin:$PATH";
 export EDITOR="vim"
-export PS1="\[\e[1m\]\u:\w$ \[\e[0m\]"
+export PS1="\[\e[1;4;7m\]\u:\w$ \[\e[0m\]"
 # Avoid duplicates
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
