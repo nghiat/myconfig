@@ -5,7 +5,6 @@ colors_templates = {
 }
 
 links = {
-    "~/.bash_profile": ".bash_profile",
     "~/.config/mpv/mpv.conf": "mpv.conf",
     "~/.config/pulse/default.pa": "default.pa",
     "~/.Xdefaults": ".Xdefaults",

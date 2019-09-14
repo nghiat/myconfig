@@ -1,6 +1,7 @@
 from scripts.subprocess_wrapper import run_script, run_command
 
 links = {
+    "~/.bash_profile": ".bash_profile",
     "~/.bashrc": ".bashrc",
     "~/.gdbinit": ".gdbinit",
     "~/.inputrc": ".inputrc",
