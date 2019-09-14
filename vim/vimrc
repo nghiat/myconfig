@@ -57,11 +57,11 @@ call plug#end()            " required
     set wildcharm=<Tab>
     set wildmenu
     set wildmode=longest:full,full
-    "X11 clipboard
-    if has("unix")
-        set clipboard=unnamedplus
-    elseif has("win32")
+    "mac has to be before unix
+    if has("win32") || has("mac")
         set clipboard=unnamed
+    elseif has("unix")
+        set clipboard=unnamedplus
     endif
     "window default size
     if has('gui_running')
@@ -75,10 +75,13 @@ call plug#end()            " required
 
     "set gui font
     if has('gui_running')
-        if has("unix")
-            set guifont=DejaVu\ Sans\ Mono\ 12
-        elseif has("win32")
+        "mac has to be before unix
+        if has("win32")
             set guifont=Consolas:h12:cANSI
+        elseif has("mac")
+            set guifont=Menlo:h12
+        elseif has("unix")
+            set guifont=DejaVu\ Sans\ Mono\ 12
         endif
         set guioptions-=L
         set guioptions-=m
@@ -169,3 +172,8 @@ call plug#end()            " required
 
 """"""""""vim-commentary""""""""""
     autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
+
+""""""""""vim-gutentags""""""""""
+    if has("mac")
+        let g:gutentags_ctags_executable = "/usr/local/bin/ctags"
+    endif

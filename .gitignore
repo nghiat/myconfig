@@ -1,5 +1,6 @@
 __pycache__
 *.exe
+*.itermcolors
 *.swp
 .pytest_cache
 .tmux
