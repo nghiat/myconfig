@@ -133,7 +133,7 @@ call plug#end()            " required
     vnoremap <silent> <leader>s <C-c>:FastSwitch<CR>
 
 """"""""""vim-clang-format""""""""""
-    autocmd FileType c,cpp,objc vnoremap <buffer><Leader>f :ClangFormat<CR>
+    autocmd FileType c,cpp,objc,objcpp vnoremap <buffer><Leader>f :ClangFormat<CR>
 
 """"""""""fzf""""""""""
     nnoremap <leader>p<Space> :GFiles<CR>
@@ -171,6 +171,7 @@ call plug#end()            " required
     vnoremap <leader>vf <C-c>:Gpull<CR>
 
 """"""""""vim-commentary""""""""""
+    vnoremap <leader>c :Commentary<CR>
     autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
 """"""""""vim-gutentags""""""""""
