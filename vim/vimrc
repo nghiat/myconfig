@@ -181,8 +181,3 @@ vnoremap <leader>vf <C-c>:Gpull<CR>
 """"""""""vim-commentary""""""""""
 vnoremap <leader>c :Commentary<CR>
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
-
-""""""""""vim-gutentags""""""""""
-if has("mac")
-    let g:gutentags_ctags_executable = "/usr/local/bin/ctags"
-endif
