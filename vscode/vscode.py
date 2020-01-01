@@ -2,6 +2,8 @@ import os
 import platform
 from scripts.subprocess_wrapper import run_command
 
+note = """code.cmd on Windows"""
+
 extension_ids = [
     "christian-kohler.path-intellisense",
     "donjayamanne.githistory",
