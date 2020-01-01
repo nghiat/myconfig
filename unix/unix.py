@@ -16,4 +16,4 @@ gem install tmuxinator'''
 
 def setup():
     run_command("git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm")
-    run_command("cp ~/myconfig/linux-general/.tmux_local.conf ~")
+    run_command("cp ~/myconfig/unix/.tmux_local.conf ~")
