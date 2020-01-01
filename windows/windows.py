@@ -4,11 +4,11 @@ from scripts.subprocess_wrapper import run_command
 note = """clink
 autohotkey
 vcxsrv
-Ultimate Windows Tweaker
+Ultimate Windows Tweaker -> Customization -> This PC
 QTTabBar
-Preview pane
-Folder Options: Quick access
-Edit and run: edit_with_vim.reg
+Task Scheduler:
+- Disable "Conditions->Start the task only if the computer ison AC power"
+- Disable "Settings->Stop the task if it runs longer than"
 
 Visual Studio:
   - Color Theme Editor
