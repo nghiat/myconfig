@@ -28,7 +28,7 @@ volumeicon
 xf86-input-synaptics
 acpid
 xsel
-xorg-xbacklight
+light (sudo usermod -a -G video nghia)
 arandr
 xinit
 udisks2
