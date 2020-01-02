@@ -13,6 +13,9 @@ links = {
 }
 
 note = '''
+hibernate:
+- /etc/default/grub: GRUB_CMDLINE_LINUX_DEFAULT="resume={fstab}" -> grub-mkconfig
+- /etc/mkinitcpio.conf: add resume hook after udev -> mkinitcpio -p linux
 xsel
 urxvt
 redshift
@@ -34,3 +37,4 @@ def setup():
     run_script("change-power-settings.sh")
     # Intel vtune
     run_command("echo kernel.yama.ptrace_scope=0 | sudo tee /etc/sysctl.d/10-ptrace.conf > /dev/null")
+    run_command("cp .Xdefaults.dpi ~")
