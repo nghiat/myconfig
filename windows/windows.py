@@ -5,9 +5,8 @@ note = """clink
 autohotkey
 vcxsrv
 Ultimate Windows Tweaker -> Customization -> This PC
-QTTabBar
 Task Scheduler:
-- Disable "Conditions->Start the task only if the computer ison AC power"
+- Disable "Conditions->Start the task only if the computer is on AC power"
 - Disable "Settings->Stop the task if it runs longer than"
 
 Visual Studio:
@@ -25,8 +24,3 @@ def setup():
     run_command("schtasks /CREATE /SC ONLOGON /TN Launch-Apps /TR {} /RL LIMITED".format(os.path.join(current_folder, "launch_apps.ahk")))
     run_command("schtasks /CREATE /SC ONLOGON /TN xlaunch /TR {} /RL LIMITED".format(os.path.join(current_folder, "config.xlaunch")))
     run_command('copy %HOMEPATH%\\myconfig\\windows\\urxvt.lnk "%AppData%\\Microsoft\\Windows\\Start Menu\\Programs"')
-    run_command('reg IMPORT preview.reg')
-    run_command('taskkill /f /im explorer.exe')
-    run_command('start explorer.exe')
-
-
