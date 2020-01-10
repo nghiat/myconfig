@@ -12,12 +12,18 @@ Task Scheduler:
 Visual Studio:
   - Color Theme Editor
   - nghiatt.vssettings
+
+FreeCommanderXE: Settings -> Shell Menu
 """
 
 colors_templates = {
     ".minttyrc.template": "~/.minttyrc",
 }
 
+links = {
+    "~/.vimrc": "vimrc",
+    "~/AppData/Local/FreeCommanderXE/Settings/FreeCommander.ini": "FreeCommander.ini",
+}
 
 def setup():
     current_folder = os.path.dirname(os.path.realpath(__file__))
