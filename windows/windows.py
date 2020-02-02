@@ -4,6 +4,8 @@ from scripts.subprocess_wrapper import run_command
 note = """clink
 autohotkey
 vcxsrv
+https://github.com/vim/vim-win32-installer/releases
+
 Ultimate Windows Tweaker -> Customization -> This PC
 Task Scheduler:
 - Disable "Conditions->Start the task only if the computer is on AC power"
