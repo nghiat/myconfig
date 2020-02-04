@@ -11,11 +11,15 @@ links = {
     "~/.xprofile": ".xprofile",
     "~/.xbindkeysrc": ".xbindkeysrc",
 }
-
 note = '''
 hibernate:
 - /etc/default/grub: GRUB_CMDLINE_LINUX_DEFAULT="resume={fstab}" -> grub-mkconfig
 - /etc/mkinitcpio.conf: add resume hook after udev -> mkinitcpio -p linux
+GRUB default:
+  GRUB_DEFAULT=saved
+  GRUB_SAVEDEFAULT=true
+Xdefaults.dpi
+
 xsel
 urxvt
 redshift
