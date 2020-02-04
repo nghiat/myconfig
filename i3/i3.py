@@ -7,6 +7,7 @@ links = {
     "~/.config/dunst/dunstrc": "dunstrc",
     "~/.config/i3/config": "i3",
     "~/.config/i3/i3status.conf": "i3status.conf",
+    "~/gnome_keyring.sh": "gnome_keyring.sh",
     "/etc/systemd/system/i3lock@.service": "i3lock@.service",
 }
 

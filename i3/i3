@@ -102,7 +102,7 @@ bindsym $mod+x move workspace to output left
 
 exec --no-startup-id nm-applet &
 exec --no-startup-id compton &
-exec --no-startup-id dropbox start &
+exec --no-startup-id dunst &
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent &
 exec --no-startup-id redshift-gtk &
 exec --no-startup-id lxpolkit &
