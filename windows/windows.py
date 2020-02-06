@@ -1,11 +1,11 @@
-import os
+mport os
 from scripts.subprocess_wrapper import run_command
 
 note = """clink
 autohotkey
 vcxsrv
 chocolatey procexp
-https://github.com/vim/vim-win32-installer/releases
+https://tuxproject.de/projects/vim/
 
 Ultimate Windows Tweaker -> Customization -> This PC
 Task Scheduler:
@@ -17,6 +17,10 @@ Visual Studio:
   - nghiatt.vssettings
 
 FreeCommanderXE: Settings -> Shell Menu
+
+HiDPI:
+- Right click -> Properties -> Change high DPI settings -> Override high ...
+  + FreeCommander.exe
 """
 
 colors_templates = {
