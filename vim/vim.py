@@ -1,5 +1,6 @@
 import os
 
+note = """fzf rg ctags"""
 colors_templates = {
         "./vimfiles/colors/ez.vim.template": "./vimfiles/colors/ez.vim",
 }
