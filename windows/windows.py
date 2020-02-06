@@ -4,6 +4,7 @@ from scripts.subprocess_wrapper import run_command
 note = """clink
 autohotkey
 vcxsrv
+chocolatey procexp
 https://github.com/vim/vim-win32-installer/releases
 
 Ultimate Windows Tweaker -> Customization -> This PC
@@ -33,3 +34,7 @@ def setup():
     run_command("schtasks /CREATE /SC ONLOGON /TN xlaunch /TR {} /RL LIMITED".format(os.path.join(current_folder, "config.xlaunch")))
     run_command('copy %HOMEPATH%\\myconfig\\windows\\urxvt.lnk "%AppData%\\Microsoft\\Windows\\Start Menu\\Programs"')
     run_command('reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_QWORD /f')
+    # Windows startup delay
+    run_command('reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Serialize" /v StartupDelayInMSec /d 0 /t REG_DWORD /f')
+    run_command('reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" /v BingSearchEnabled /d 0 /t REG_DWORD /f')
+    run_command('reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" /v CortanaConsent /d 0 /t REG_DWORD /f')
