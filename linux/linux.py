@@ -18,7 +18,6 @@ hibernate:
 GRUB default:
   GRUB_DEFAULT=saved
   GRUB_SAVEDEFAULT=true
-Xdefaults.dpi
 
 xsel
 urxvt
