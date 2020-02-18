@@ -21,6 +21,8 @@ FreeCommanderXE: Settings -> Shell Menu
 HiDPI:
 - Right click -> Properties -> Change high DPI settings -> Override high ...
   + FreeCommander.exe
+
+Windows 10: Settings -> Accounts -> Sign-in options -> Disble "Use my sign-in info ..."
 """
 
 colors_templates = {
