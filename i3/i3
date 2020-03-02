@@ -112,15 +112,16 @@ exec --no-startup-id xset -display :0.0 dpms 300 300
 exec --no-startup-id syndaemon -i 0.2 -t -K -R -d
 # Disable bells
 exec --no-startup-id xset -b
-exec --no-startup-id xfce4-panel --disable-wm-check
+# exec --no-startup-id xfce4-panel --disable-wm-check
 exec --no-startup-id pactl load-module module-switch-on-connect
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
 for_window [class="mpv"] floating enable
 for_window [class="vlc"] floating enable
+for_window [class="Dodge"] floating enable
 
-# bar {
-#   status_command i3status --config ~/.config/i3/i3status.conf
-#   position top
-#   font pango: DejaVu Sans Mono Bold 11
-# }
+bar {
+  status_command i3status --config ~/.config/i3/i3status.conf
+  position top
+  font pango: DejaVu Sans Mono Bold 11
+}
