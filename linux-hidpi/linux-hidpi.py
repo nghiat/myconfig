@@ -1,5 +1,6 @@
 links = {
     "/etc/vconsole.conf": "vconsole.conf",
+    "~/.xprofile_hidpi": ".xprofile_hidpi",
 }
 
 note = """
