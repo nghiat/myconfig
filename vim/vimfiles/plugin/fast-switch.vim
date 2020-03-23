@@ -13,7 +13,31 @@ function! s:FastSwitchFrom(fullPathWithoutExt, ext, fromExts, toExts)
         return 1
       endif
     endfor
+
+    let pair = [ "Public", "Private"]
+    for i in [0, 1]
+      let folder1 = pair[i]
+      let folder2 = pair[1 - i]
+      if has("win32")
+        let slash = '\'
+      else
+        let slash = '/'
+      endif
+      let newFolder1 = slash . folder1 . slash
+      let newFolder2 = slash . folder2 . slash
+      if stridx(a:fullPathWithoutExt, newFolder1) > -1
+        for toExt in a:toExts
+          let otherFile = substitute(a:fullPathWithoutExt, newFolder1, newFolder2, "") . toExt
+          if filereadable(otherFile)
+            execute 'edit' otherFile
+            return 1
+          endif
+        endfor
+      endif
+    endfor
+
   endif
+
   return 0
 endfunction
 

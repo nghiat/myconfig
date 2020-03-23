@@ -11,6 +11,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'embear/vim-localvimrc'
 " All of your Plugs must be added before the following line
 call plug#end()            " required
 """"""""""Vim config""""""""""
@@ -181,3 +182,6 @@ vnoremap <leader>vf <C-c>:Gpull<CR>
 """"""""""vim-commentary""""""""""
 vnoremap <leader>c :Commentary<CR>
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
+
+""""""""""vim-localvimrc""""""""""
+let g:localvimrc_persistent=2
