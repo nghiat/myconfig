@@ -26,9 +26,11 @@ def create_links(prefix_path):
         results[os.path.join(prefix_path, filename)] = filename
     return results
 
+code_cmd = "code"
 
 if platform.system() == "Windows":
     links = create_links("~/AppData/Roaming/Code/User")
+    code_cmd = "code.cmd"
 elif platform.system() == "Linux":
     links = create_links("~/.config/Code/User")
 elif platform.system() == "Darwin":
@@ -37,9 +39,9 @@ elif platform.system() == "Darwin":
 
 def setup():
     for id in extension_ids:
-        run_command("code --install-extension " + id)
+        run_command(code_cmd + " --install-extension " + id)
 
 
 def clean():
     for id in extension_ids:
-        run_command("code --uninstall-extension " + id)
+        run_command(code_cmd + " --uninstall-extension " + id)

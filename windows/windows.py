@@ -1,4 +1,4 @@
-mport os
+import os
 from scripts.subprocess_wrapper import run_command
 
 note = """clink
