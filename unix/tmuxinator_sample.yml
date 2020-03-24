@@ -1,0 +1,10 @@
+name: abc
+root: ~/
+
+windows:
+  # dummy window 0
+  - tmp:
+    - clear
+  - w1:
+    - cd /...
+    - clear
