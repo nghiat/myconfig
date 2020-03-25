@@ -1,6 +1,8 @@
 name: abc
 root: ~/
 
+startup_window: w1
+
 windows:
   # dummy window 0
   - tmp:
