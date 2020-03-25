@@ -1,6 +1,6 @@
 import os
 
-note = """fzf rg ctags"""
+note = """fzf rg universal-ctags"""
 colors_templates = {
         "./vimfiles/colors/ez.vim.template": "./vimfiles/colors/ez.vim",
 }
