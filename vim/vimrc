@@ -97,7 +97,14 @@ set statusline+=\ (%F)
 set statusline+=\ (%Y)
 set statusline+=\ (%l:%c)
 
-set noswapfile
+" See vim.py
+" // to make vim use absolute paths
+if has("win32")
+  set directory=~/vimfiles/swap//
+else
+  set directory=~/.vim/tmp//
+endif
+
 set tags=./tags;
 " Shortcuts
 " Press Space to turn off highlighting and clear any message already displayed.
