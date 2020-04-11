@@ -1,2 +1,2 @@
-noremap <F9> :terminal /home/nghia/eztools/ninja64 -C /home/nghia/ezc/out/debug sample<CR>
-inoremap <F9> <C-O>:terminal /home/nghia/eztools/ninja64 -C /home/nghia/ezc/out/debug sample<CR>
+noremap <F9> :terminal ++shell /home/nghia/eztools/ninja64 -C /home/nghia/ezc/out/debug sample<CR>
+inoremap <F9> <C-O>:terminal ++shell /home/nghia/eztools/ninja64 -C /home/nghia/ezc/out/debug sample<CR>
