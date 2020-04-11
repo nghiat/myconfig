@@ -102,7 +102,7 @@ set statusline+=\ (%l:%c)
 if has("win32")
   set directory=~/vimfiles/swap//
 else
-  set directory=~/.vim/tmp//
+  set directory=~/.vim/swap//
 endif
 
 set tags=./tags;
