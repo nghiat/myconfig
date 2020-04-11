@@ -12,6 +12,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'embear/vim-localvimrc'
+Plug 'editorconfig/editorconfig-vim'
 " All of your Plugs must be added before the following line
 call plug#end()            " required
 """"""""""Vim config""""""""""
@@ -134,6 +135,10 @@ if v:version >= 700
     au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 endif
 autocmd FileType gn noremap <Leader>f :py3f ~/myconfig/vim/gn-format.py<CR>
+
+" Perfocrce commands.
+command P4e execute "!start p4 edit %"
+command P4d execute "!start p4 diff %"
 
 """"""""""A""""""""""
 let g:alternateNoDefaultAlternate = 1
