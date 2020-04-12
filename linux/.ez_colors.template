@@ -4,33 +4,51 @@ hour=$(date +"%H")
 #Sync these hours with vim and emacs.
 if [ $hour -ge 8 ] && [ $hour -lt 19 ]; then
   # foreground
-  echo -ne '\e]10;{Black}\a'
+  echo -ne '\e]10;{LBlack}\a'
   # background
-  echo -ne '\e]11;{White}\a'
+  echo -ne '\e]11;{LWhite}\a'
   # cursor
-  echo -ne '\e]12;{Black}\a'
+  echo -ne '\e]12;{LBlack}\a'
+
+  echo -ne '\e]30;{LBlack}\a'
+  echo -ne '\e]31;{LRed}\a'
+  echo -ne '\e]32;{LGreen}\a'
+  echo -ne '\e]33;{LYellow}\a'
+  echo -ne '\e]34;{LBlue}\a'
+  echo -ne '\e]35;{LMagenta}\a'
+  echo -ne '\e]36;{LCyan}\a'
+  echo -ne '\e]37;{LWhite}\a'
+  echo -ne '\e]40;{LBlack}\a'
+  echo -ne '\e]41;{LRed}\a'
+  echo -ne '\e]42;{LGreen}\a'
+  echo -ne '\e]43;{LYellow}\a'
+  echo -ne '\e]44;{LBlue}\a'
+  echo -ne '\e]45;{LMagenta}\a'
+  echo -ne '\e]46;{LCyan}\a'
+  echo -ne '\e]47;{LWhite}\a'
 else
   # foreground
-  echo -ne '\e]10;{White}\a'
+  echo -ne '\e]10;{DWhite}\a'
   # background
-  echo -ne '\e]11;{Black}\a'
+  echo -ne '\e]11;{DBlack}\a'
   # cursor
-  echo -ne '\e]12;{White}\a'
+  echo -ne '\e]12;{DWhite}\a'
+
+  echo -ne '\e]30;{DBlack}\a'
+  echo -ne '\e]31;{DRed}\a'
+  echo -ne '\e]32;{DGreen}\a'
+  echo -ne '\e]33;{DYellow}\a'
+  echo -ne '\e]34;{DBlue}\a'
+  echo -ne '\e]35;{DMagenta}\a'
+  echo -ne '\e]36;{DCyan}\a'
+  echo -ne '\e]37;{DWhite}\a'
+  echo -ne '\e]40;{DBlack}\a'
+  echo -ne '\e]41;{DRed}\a'
+  echo -ne '\e]42;{DGreen}\a'
+  echo -ne '\e]43;{DYellow}\a'
+  echo -ne '\e]44;{DBlue}\a'
+  echo -ne '\e]45;{DMagenta}\a'
+  echo -ne '\e]46;{DCyan}\a'
+  echo -ne '\e]47;{DWhite}\a'
 fi
 
-echo -ne '\e]30;{Black}\a'
-echo -ne '\e]31;{Red}\a'
-echo -ne '\e]32;{Green}\a'
-echo -ne '\e]33;{Yellow}\a'
-echo -ne '\e]34;{Blue}\a'
-echo -ne '\e]35;{Magenta}\a'
-echo -ne '\e]36;{Cyan}\a'
-echo -ne '\e]37;{White}\a'
-echo -ne '\e]40;{Black}\a'
-echo -ne '\e]41;{Red}\a'
-echo -ne '\e]42;{Green}\a'
-echo -ne '\e]43;{Yellow}\a'
-echo -ne '\e]44;{Blue}\a'
-echo -ne '\e]45;{Magenta}\a'
-echo -ne '\e]46;{Cyan}\a'
-echo -ne '\e]47;{White}\a'

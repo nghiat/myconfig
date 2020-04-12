@@ -33,14 +33,23 @@ colors256 = {
     "tDCompletePopupF": "15", "DCompletePopupF": "#ffffff",
 
     # Terminal usually uses color name Black, White, etc.
-    "Black": "#000000",
-    "White": "#ffffff",
-    "Red": "#800000",
-    "Green": "#008000",
-    "Blue": "#0000ff",
-    "Yellow": "#808000",
-    "Magenta": "#800080",
-    "Cyan": "#008080",
+    "LBlack": "#000000",
+    "LWhite": "#ffffff",
+    "LRed": "#800000",
+    "LGreen": "#008000",
+    "LBlue": "#0000ff",
+    "LYellow": "#808000",
+    "LMagenta": "#800080",
+    "LCyan": "#008080",
+
+    "DBlack": "#1c1c1c",
+    "DWhite": "#dadada",
+    "DRed": "#d78787",
+    "DGreen": "#5faf5f",
+    "DBlue": "#005faf",
+    "DYellow": "#fdfbac",
+    "DMagenta": "#68217a",
+    "DCyan": "#9affff",
 }
 
 
