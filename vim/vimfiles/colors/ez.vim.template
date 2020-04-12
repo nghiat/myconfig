@@ -31,36 +31,29 @@ highlight clear Type
 highlight clear VertSplit
 
 if &background == "light"
-  highlight Normal guibg={LB} guifg={LF}
-  highlight ColorColumn guibg={LMaxColumnB}
-  highlight Comment guifg={LCommentF}
-  highlight Todo guifg={LCommentF}
-  highlight CursorLine guibg={LCurrentLineB}
-  highlight MatchParen gui=bold guibg={LMatchBracketB}
-  highlight String guifg={LStringF}
-  highlight SpecialChar guifg={LStringF}
-  highlight Search cterm=bold gui=bold guibg={LStringF} guifg={LF}
-  " highlight Statement guifg={LKeywordF}
-  " highlight StorageClass guifg={LKeywordF}
-  " highlight Structure guifg={LKeywordF}
-  highlight Visual guibg={LSelectionB}
-  highlight Pmenu guibg={LCompletePopupB} guifg={LCompletePopupF}
-  highlight PmenuSel gui=bold guibg={LCompletePopupB} guifg={LCompletePopupF}
+  highlight Normal ctermbg={tLB} ctermfg={tLF} guibg={LB} guifg={LF}
+  highlight ColorColumn ctermbg={tLMaxColumnB} guibg={LMaxColumnB}
+  highlight Comment ctermfg={tLCommentF} guifg={LCommentF}
+  highlight CursorLine ctermbg={tLCurrentLineB} guibg={LCurrentLineB}
+  highlight MatchParen cterm=bold ctermbg={tLMatchBracketB} gui=bold guibg={LMatchBracketB}
+  highlight String ctermfg={tLStringF} guifg={LStringF}
+  highlight SpecialChar ctermfg={tLStringF} guifg={LStringF}
+  highlight Search cterm=bold ctermbg={tLSearchB} gui=bold guibg={LSearchB}
+  highlight Visual ctermbg={tLSelectionB} guibg={LSelectionB}
+  highlight Pmenu ctermbg={tLCompletePopupB} ctermfg={tLCompletePopupF} guibg={LCompletePopupB} guifg={LCompletePopupF}
+  highlight PmenuSel cterm=bold ctermbg={tLCompletePopupB} ctermfg={tLCompletePopupF} gui=bold guibg={LCompletePopupB} guifg={LCompletePopupF}
 else
-  highlight Normal guibg={DB} guifg={DF}
-  highlight ColorColumn guibg={DMaxColumnB}
-  highlight Comment guifg={DCommentF}
-  highlight Todo guifg={DCommentF}
-  highlight CursorLine guibg={DCurrentLineB}
-  highlight MatchParen gui=bold guibg={DMatchBracketB}
-  highlight String guifg={DStringF}
-  highlight SpecialChar guifg={DStringF}
-  highlight Search gui=bold guibg={DStringF} guifg={DF}
-  " highlight Statement guifg={DKeywordF}
-  " highlight StorageClass guifg={DKeywordF}
-  " highlight Structure guifg={DKeywordF}
-  highlight Visual guibg={DSelectionB}
-  highlight Pmenu guibg={DCompletePopupB} guifg={DCompletePopupF}
-  highlight PmenuSel gui=bold guibg={DCompletePopupB} guifg={DCompletePopupF}
+  highlight Normal ctermbg={tDB} ctermfg={tDF} guibg={DB} guifg={DF}
+  highlight ColorColumn ctermbg={tDMaxColumnB} guibg={DMaxColumnB}
+  highlight Comment ctermfg={tDCommentF} guifg={DCommentF}
+  highlight CursorLine ctermbg={tDCurrentLineB} guibg={DCurrentLineB}
+  highlight MatchParen cterm=bold ctermbg={tDMatchBracketB} gui=bold guibg={DMatchBracketB}
+  highlight String ctermfg={tDStringF} guifg={DStringF}
+  highlight SpecialChar ctermfg={tDStringF} guifg={DStringF}
+  highlight Search cterm=bold ctermbg={tDSearchB} gui=bold guibg={DSearchB}
+  highlight Visual ctermbg={tDSelectionB} guibg={DSelectionB}
+  highlight Pmenu ctermbg={tDCompletePopupB} ctermfg={tDCompletePopupF} guibg={DCompletePopupB} guifg={DCompletePopupF}
+  highlight PmenuSel cterm=bold ctermbg={tDCompletePopupB} ctermfg={tDCompletePopupF} gui=bold guibg={DCompletePopupB} guifg={DCompletePopupF}
 endif
-highlight VertSplit guibg=bg guifg=bg
+
+highlight VertSplit ctermbg=bg ctermfg=bg guibg=bg guifg=bg
