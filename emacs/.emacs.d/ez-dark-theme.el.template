@@ -13,7 +13,7 @@
   '(font-lock-constant-face ((t (:foreground "{DF}"))))
   '(highlight ((t (:background "{DCurrentLineB}"))))
   '(isearch ((t (:background "{DSearchB}"))))
-  '(region ((t (:background "{DSelectionB}" :foreground "{DSelectionF}"))))
+  '(region ((t (:background "{DSelectionB}"))))
 
   ;; company
   '(company-preview-common ((t (:background "{DB}" :foreground "{DF}" :weight bold))))

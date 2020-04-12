@@ -1,5 +1,7 @@
 import os
 
+# Light theme is based on old https://cs.chromium.org/ theme.
+# Dark theme is based on visual studio dark theme.
 colors256 = {
     # Light
     "tLB": "15", "LB": "#ffffff",
@@ -7,9 +9,8 @@ colors256 = {
     "tLCommentF": "1", "LCommentF": "#800000",
     "tLStringF": "2", "LStringF": "#008000",
     "tLKeywordF": "4", "LKeywordF": "#0000ff",
-    "tLLineNumberF": "4", "LLineNumberF": "#0000ff",
     "tLSelectionB": "33", "LSelectionB": "#0087ff",
-    "tLSelectionF": "15", "LSelectionF": "#ffffff",
+    # "tLSelectionF": "15", "LSelectionF": "#ffffff",
     "tLSearchB": "121", "LSearchB": "#87ffaf",
     "tLMatchBracketB": "121", "LMatchBracketB": "#87ffaf",
     "tLCurrentLineB": "254", "LCurrentLineB": "#e4e4e4",
@@ -17,20 +18,19 @@ colors256 = {
     "tLCompletePopupB": "254", "LCompletePopupB": "#e4e4e4",
     "tLCompletePopupF": "0", "LCompletePopupF": "#000000",
     # Dark
-    "tDB": "0", "DB": "#000000",
-    "tDF": "15", "DF": "#ffffff",
-    "tDCommentF": "87", "DCommentF": "#5fffff",
-    "tDStringF": "207", "DStringF": "#ff5fff",
-    "tDKeywordF": "227", "DKeywordF": "#ffff5f",
-    "tDLineNumberF": "4", "DLineNumberF": "#ffff5f",
-    "tDSelectionB": "33", "DSelectionB": "#0087ff",
-    "tDSelectionF": "15", "DSelectionF": "#000000",
-    "tDSearchB": "89", "DSearchB": "#87005f",
-    "tDMatchBracketB": "89", "DMatchBracketB": "#87005f",
+    "tDB": "234", "DB": "#1c1c1c",
+    "tDF": "253", "DF": "#dadada",
+    "tDCommentF": "71", "DCommentF": "#5faf5f",
+    "tDStringF": "174", "DStringF": "#d78787",
+    "tDKeywordF": "183", "DKeywordF": "#d7afff",
+    "tDSelectionB": "24", "DSelectionB": "#005f87",
+    # "tDSelectionF": "15", "DSelectionF": "#000000",
+    "tDSearchB": "241", "DSearchB": "#626262",
+    "tDMatchBracketB": "25", "DMatchBracketB": "#005faf",
     "tDCurrentLineB": "238", "DCurrentLineB": "#444444",
     "tDMaxColumnB": "238", "DMaxColumnB": "#444444",
     "tDCompletePopupB": "238", "DCompletePopupB": "#444444",
-    "tDCompletePopupF": "15", "DCompletePopupF": "#ffffff",
+    "tDCompletePopupF": "253", "DCompletePopupF": "#dadada",
 
     # Terminal usually uses color name Black, White, etc.
     "LBlack": "#000000",
