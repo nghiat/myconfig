@@ -24,12 +24,6 @@ set smartcase
 autocmd BufEnter * silent! lcd %:p:h
 :autocmd VimResized * wincmd =
 syntax on
-" Sync these colors with emacs and bash.
-if strftime("%H") >= 8 && strftime("%H") < 19
-    set background=light
-else
-    set background=dark
-endif
 colorscheme ez
 set cursorline
 filetype plugin indent on    " required
