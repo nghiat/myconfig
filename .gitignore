@@ -17,6 +17,7 @@ setup.log
 tags
 vim/vimfiles/autoload/cquery.vim
 vim/vimfiles/plugged
+vim/vimfiles/swap
 vim/vimfiles/colors/ez.vim
 vim/vimfiles/.netrwhist
 windows/.minttyrc
