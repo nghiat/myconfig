@@ -18,6 +18,7 @@ let g:colors_name='ez'
 highlight clear Comment
 highlight clear Constant
 highlight clear CursorColumn
+highlight clear CursorLine
 highlight clear Identifier
 highlight clear MatchParen
 highlight clear Number
