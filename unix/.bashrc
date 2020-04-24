@@ -22,7 +22,9 @@ stty -ixon
 
 force_color_prompt=yes
 # This has to be sourced before running tmux
-source ~/.ez_colors
+if [ -f ~/.ez_colors ]; then
+  source ~/.ez_colors
+fi
 if [ -f ~/.ez_local ]; then
   source ~/.ez_local
 fi

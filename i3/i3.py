@@ -28,15 +28,12 @@ ttf-dejavu
 volumeicon
 xf86-input-synaptics
 acpid
-xsel
 light (sudo usermod -a -G video nghia)
 arandr
-xinit
+xinit (or xorg-xinit)
 udisks2
 gvfs
 gvfs-mtp
 gvfs-smb
 lxsession
-xfce-i3-workspaces-plugin(-git)
-xfce4-battery-plugin
 """

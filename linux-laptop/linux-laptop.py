@@ -1,4 +1,4 @@
-from scripts.subprocess_wrapper import run_script
+from scripts.subprocess_wrapper import run_command, run_script
 
 links = {
     "/etc/X11/xorg.conf.d/30-touchpad.conf": "30-touchpad.conf",
