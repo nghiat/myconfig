@@ -8,7 +8,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'rhysd/vim-clang-format'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'embear/vim-localvimrc'
