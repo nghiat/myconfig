@@ -90,7 +90,7 @@ set statusline=(%t)
 set statusline+=\ (%{&ff})
 set statusline+=\ (%F)
 set statusline+=\ (%Y)
-set statusline+=\ (%l:%c)
+set statusline+=\ (%c\ %l\/%L)
 
 " See vim.py
 " // to make vim use absolute paths
