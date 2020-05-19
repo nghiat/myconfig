@@ -35,7 +35,6 @@ colors_templates = {
 
 links = {
     "~/.vimrc": "vimrc",
-    "~/AppData/Local/FreeCommanderXE/Settings/FreeCommander.ini": "FreeCommander.ini",
 }
 
 def setup():
@@ -50,3 +49,7 @@ def setup():
     run_command('reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" /v CortanaConsent /d 0 /t REG_DWORD /f')
     # Colortool
     generate_iterm2_presets()
+    # Free Commander
+    run_command('mkdir %HOMEPATH%\\AppData\\Local\\FreeCommanderXE\\Settings')
+    run_command('copy %HOMEPATH%\\myconfig\\windows\\FreeCommander.ini "%HOMEPATH%\\AppData\\Local\\FreeCommanderXE\\Settings"')
+    run_command('copy %HOMEPATH%\\myconfig\\windows\\FreeCommander.shc "%HOMEPATH%\\AppData\\Local\\FreeCommanderXE\\Settings"')
