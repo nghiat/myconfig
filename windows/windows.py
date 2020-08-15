@@ -1,15 +1,11 @@
 import os
 from scripts.subprocess_wrapper import run_command
-from scripts.colors import generate_iterm2_presets
 
 note = """clink
 autohotkey
 vcxsrv
 chocolatey procexp
 https://tuxproject.de/projects/vim/
-
-Run the following command (cause running ColorTool.exe from here raises error):
-    ColorTool.exe -b -q ez.itermcolors && del *.itermcolors
 
 Ultimate Windows Tweaker -> Customization -> This PC
 Task Scheduler:
@@ -47,8 +43,6 @@ def setup():
     run_command('reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Serialize" /v StartupDelayInMSec /d 0 /t REG_DWORD /f')
     run_command('reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" /v BingSearchEnabled /d 0 /t REG_DWORD /f')
     run_command('reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" /v CortanaConsent /d 0 /t REG_DWORD /f')
-    # Colortool
-    generate_iterm2_presets()
     # Free Commander
     run_command('mkdir %HOMEPATH%\\AppData\\Local\\FreeCommanderXE\\Settings')
     run_command('copy %HOMEPATH%\\myconfig\\windows\\FreeCommander.ini "%HOMEPATH%\\AppData\\Local\\FreeCommanderXE\\Settings"')
