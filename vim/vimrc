@@ -12,7 +12,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'embear/vim-localvimrc'
-Plug 'editorconfig/editorconfig-vim'
+Plug 'nfvs/vim-perforce'
 " All of your Plugs must be added before the following line
 call plug#end()            " required
 """"""""""Vim config""""""""""
@@ -22,6 +22,7 @@ set wildignorecase
 set smartcase
 " Plays nicer with fzf than autochdir
 autocmd BufEnter * silent! lcd %:p:h
+set autochdir
 :autocmd VimResized * wincmd =
 syntax on
 colorscheme ez
@@ -131,8 +132,8 @@ endif
 autocmd FileType gn noremap <Leader>f :py3f ~/myconfig/vim/gn-format.py<CR>
 
 " Perfocrce commands.
-command P4e execute "!start p4 edit %"
-command P4d execute "!start p4 diff %"
+command P4e silent execute "!start p4 edit %"
+command P4d silent execute "!start p4 diff -f %"
 
 """"""""""A""""""""""
 let g:alternateNoDefaultAlternate = 1
@@ -165,12 +166,18 @@ command! -nargs=* Rg
     \ 1,
     \ 0)
 
-command! -nargs=* Rgg
-    \ call fzf#vim#grep(
-    \ 'rg --column --line-number --no-heading --smart-case --color=always ' . <q-args>,
-    \ 1,
-    \ {'dir': system('git rev-parse --show-toplevel')[:-2]},
-    \ 0)
+function s:RgFromRoot(params)
+    call fzf#vim#grep(
+        \ 'rg --column --line-number --no-heading --smart-case --color=always ' . a:params,
+        \ 1,
+        \ {'dir': system('git rev-parse --show-toplevel')[:-2]},
+        \ 0)
+endfunction
+
+command! -nargs=* Rb call fzf#vim#files(system('git rev-parse --show-toplevel')[:-2])
+command! -nargs=* Rgg call s:RgFromRoot(<q-args>)
+command! -nargs=* Rgc call s:RgFromRoot('-t cpp ' . <q-args>)
+command! -nargs=* Rgl call s:RgFromRoot('--no-ignore -t lua ' . <q-args>)
 
 """"""""""fugitive""""""""""
 nnoremap <leader>vd :Gdiff<CR>
@@ -192,3 +199,4 @@ autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
 """"""""""vim-localvimrc""""""""""
 let g:localvimrc_persistent=2
+let g:localvimrc_event = "BufEnter"
