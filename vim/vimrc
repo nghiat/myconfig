@@ -41,7 +41,9 @@ set guicursor+=a:blinkon0
 set hidden
 set history=1000
 set list
-set listchars=tab:\ \ >,space:\.
+set listchars=tab:\ \ >,trail:\.,extends:>
+autocmd BufWinEnter,BufReadPre * setlocal conceallevel=2 concealcursor=ni
+autocmd BufWinEnter,BufReadPre * syntax match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=.
 set incsearch
 set notimeout
 " Show line, column number

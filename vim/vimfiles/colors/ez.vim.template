@@ -17,9 +17,11 @@ let g:colors_name='ez'
 
 " Remove all highlighting
 highlight clear Comment
+highlight clear Conceal
 highlight clear Constant
 highlight clear CursorColumn
 highlight clear CursorLine
+highlight clear Error
 highlight clear Identifier
 highlight clear MatchParen
 highlight clear Number
@@ -41,8 +43,11 @@ if &background == "light"
   highlight String ctermfg={tLStringF} guifg={LStringF}
   highlight SpecialChar ctermfg={tLStringF} guifg={LStringF}
   " listchars
-  highlight SpecialKey ctermfg={tLSpecialKeyF} guifg={LSpecialKeyF}
+  highlight Conceal ctermfg={tLSpecialKeyF} guifg={LSpecialKeyF}
   highlight ExtraWhitespace ctermfg={tLSpecialKeyF} guifg={LSpecialKeyF}
+  highlight NonText ctermfg={tLSpecialKeyF} guifg={LSpecialKeyF}
+  highlight SpecialKey ctermfg={tLSpecialKeyF} guifg={LSpecialKeyF}
+
   highlight Search cterm=bold ctermbg={tLSearchB} gui=bold guibg={LSearchB}
   highlight Visual ctermbg={tLSelectionB} guibg={LSelectionB}
   highlight Pmenu ctermbg={tLCompletePopupB} ctermfg={tLCompletePopupF} guibg={LCompletePopupB} guifg={LCompletePopupF}
@@ -56,8 +61,11 @@ else
   highlight String ctermfg={tDStringF} guifg={DStringF}
   highlight SpecialChar ctermfg={tDStringF} guifg={DStringF}
   " listchars
-  highlight SpecialKey ctermfg={tDSpecialKeyF} guifg={DSpecialKeyF}
+  highlight Conceal ctermfg={tDSpecialKeyF} guifg={DSpecialKeyF}
   highlight ExtraWhitespace ctermfg={tDSpecialKeyF} guifg={DSpecialKeyF}
+  highlight NonText ctermfg={tDSpecialKeyF} guifg={DSpecialKeyF}
+  highlight SpecialKey ctermfg={tDSpecialKeyF} guifg={DSpecialKeyF}
+
   highlight Search cterm=bold ctermbg={tDSearchB} gui=bold guibg={DSearchB}
   highlight Visual ctermbg={tDSelectionB} guibg={DSelectionB}
   highlight Pmenu ctermbg={tDCompletePopupB} ctermfg={tDCompletePopupF} guibg={DCompletePopupB} guifg={DCompletePopupF}
