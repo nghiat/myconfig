@@ -1,4 +1,5 @@
-" Use this function to get highlight group under cursor.
+" Get highlight group under cursor.
+" :echo SynStack()
 function! SynStack()
   if !exists("*synstack")
     return
@@ -39,6 +40,9 @@ if &background == "light"
   highlight MatchParen cterm=bold ctermbg={tLMatchBracketB} gui=bold guibg={LMatchBracketB}
   highlight String ctermfg={tLStringF} guifg={LStringF}
   highlight SpecialChar ctermfg={tLStringF} guifg={LStringF}
+  " listchars
+  highlight SpecialKey ctermfg={tLSpecialKeyF} guifg={LSpecialKeyF}
+  highlight ExtraWhitespace ctermfg={tLSpecialKeyF} guifg={LSpecialKeyF}
   highlight Search cterm=bold ctermbg={tLSearchB} gui=bold guibg={LSearchB}
   highlight Visual ctermbg={tLSelectionB} guibg={LSelectionB}
   highlight Pmenu ctermbg={tLCompletePopupB} ctermfg={tLCompletePopupF} guibg={LCompletePopupB} guifg={LCompletePopupF}
@@ -51,6 +55,9 @@ else
   highlight MatchParen cterm=bold ctermbg={tDMatchBracketB} gui=bold guibg={DMatchBracketB}
   highlight String ctermfg={tDStringF} guifg={DStringF}
   highlight SpecialChar ctermfg={tDStringF} guifg={DStringF}
+  " listchars
+  highlight SpecialKey ctermfg={tDSpecialKeyF} guifg={DSpecialKeyF}
+  highlight ExtraWhitespace ctermfg={tDSpecialKeyF} guifg={DSpecialKeyF}
   highlight Search cterm=bold ctermbg={tDSearchB} gui=bold guibg={DSearchB}
   highlight Visual ctermbg={tDSelectionB} guibg={DSelectionB}
   highlight Pmenu ctermbg={tDCompletePopupB} ctermfg={tDCompletePopupF} guibg={DCompletePopupB} guifg={DCompletePopupF}

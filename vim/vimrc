@@ -40,6 +40,8 @@ set foldmethod=manual
 set guicursor+=a:blinkon0
 set hidden
 set history=1000
+set list
+set listchars=tab:\ \ >,space:\.
 set incsearch
 set notimeout
 " Show line, column number
