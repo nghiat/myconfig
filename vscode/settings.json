@@ -1,4 +1,5 @@
 {
+  "diffEditor.ignoreTrimWhitespace": false,
   "editor.fontSize": 15,
   "editor.fontFamily": "Consolas, 'DejaVu Sans Mono'",
   "editor.detectIndentation": false,
@@ -9,6 +10,8 @@
   "editor.overviewRulerBorder": false,
   "editor.scrollbar.vertical": "hidden",
   "editor.horizontal.vertical": "hidden",
+  "editor.renderWhitespace": true,
+  "window.autoDetectColorScheme": false,
   // Add a line at 80 characters.
   "editor.rulers": [
     80
@@ -18,16 +21,6 @@
   "jake.autoDetect": "off",
   "gulp.autoDetect": "off",
   "npm.autoDetect": "off",
-  "workbench.colorTheme": "Default Light+",
-  "editor.tokenColorCustomizations": {
-    "functions": "#000000",
-    "comments": "#880000",
-    "strings": "#008800",
-    "keywords": "#000088",
-    "numbers": "#000000",
-    "types": "#000000",
-    "variables": "#000000"
-  },
   "workbench.startupEditor": "newUntitledFile",
   "workbench.iconTheme": "vscode-icons",
 
@@ -148,4 +141,10 @@
   "[javascript]": {
     "editor.defaultFormatter": "HookyQR.beautify"
   },
+  "extensions.ignoreRecommendations": true,
+  "sundial.sunrise": "08:00",
+  "sundial.sunset": "19:00",
+  "workbench.preferredLightColorTheme": "ez",
+  "workbench.preferredDarkColorTheme": "ez-dark",
+  "workbench.colorTheme": "ez-dark",
 }

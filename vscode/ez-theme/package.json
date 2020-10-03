@@ -1,0 +1,26 @@
+{
+    "name": "ez-theme",
+    "displayName": "ez-theme",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.49.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "ez",
+                "uiTheme": "vs",
+                "path": "./themes/ez-theme.json"
+            },
+            {
+                "label": "ez-dark",
+                "uiTheme": "vs-dark",
+                "path": "./themes/ez-dark-theme.json"
+            }
+        ]
+    }
+}

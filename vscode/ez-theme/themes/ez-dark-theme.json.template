@@ -1,0 +1,28 @@
+{{
+  "name": "ez-dark",
+  "type": "dark",
+  "colors": {{
+    "editor.background": "{DB}",
+    "editor.foreground": "{DF}",
+    "editor.selectionBackground": "{DSelectionB}",
+    "editor.lineHighlightBackground": "{DCurrentLineB}",
+    "editorBracketMatch.background": "{DMatchBracketB}",
+    "editorBracketMatch.border": "{DMatchBracketB}",
+    "editorSuggestWidget.background": "{DCompletePopupB}",
+    "editorSuggestWidget.foreground": "{DCompletePopupF}",
+  }},
+  "tokenColors": [
+    {{
+      "scope": "comment",
+      "settings": {{
+        "foreground": "{DCommentF}"
+      }}
+    }},
+    {{
+      "scope": "string",
+      "settings": {{
+        "foreground": "{DStringF}"
+      }}
+    }},
+  ]
+}}
