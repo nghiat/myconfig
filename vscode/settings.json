@@ -10,6 +10,9 @@
   "editor.overviewRulerBorder": false,
   "editor.scrollbar.vertical": "hidden",
   "editor.horizontal.vertical": "hidden",
+  "editor.autoClosingBrackets": "never",
+  "editor.parameterHints": false,
+  "editor.suggestOnTriggerCharacters": false,
   "editor.renderWhitespace": true,
   "window.autoDetectColorScheme": false,
   // Add a line at 80 characters.
@@ -47,6 +50,14 @@
     {
       "before": ["<leader>", "h"],
       "after": ["<C-w>", "h"],
+    },
+    {
+      "before": ["<leader>", "j"],
+      "after": ["<C-w>", "j"],
+    },
+    {
+      "before": ["<leader>", "k"],
+      "after": ["<C-w>", "k"],
     },
     {
       "before": ["<leader>", "l"],

@@ -20,4 +20,5 @@ vim/vimfiles/plugged
 vim/vimfiles/swap
 vim/vimfiles/colors/ez.vim
 vim/vimfiles/.netrwhist
+vscode/ez-theme/themes/*.json
 windows/.minttyrc
