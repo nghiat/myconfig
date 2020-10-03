@@ -13,6 +13,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'embear/vim-localvimrc'
 Plug 'nfvs/vim-perforce'
+Plug 'airblade/vim-rooter'
 " All of your Plugs must be added before the following line
 call plug#end()            " required
 """"""""""Vim config""""""""""
@@ -156,6 +157,10 @@ nnoremap <leader>; :Buffers<CR>
 vnoremap <leader>; <C-c>:Buffers<CR>
 nnoremap <leader>r :History<CR>
 vnoremap <leader>r <C-c>:History<CR>
+
+nnoremap <leader>pr :execute "Files" FindRootDirectory()<CR>
+vnoremap <leader>pr <C-c>:execute "Files" FindRootDirectory()<CR>
+
 let g:fzf_preview_window = ''
 let g:fzf_colors =
     \ { 'fg': ['fg', 'Normal'],
@@ -204,3 +209,7 @@ autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 """"""""""vim-localvimrc""""""""""
 let g:localvimrc_persistent=2
 let g:localvimrc_event = "BufEnter"
+
+""""""""""vim-rooter""""""""""
+" We only use vim-rooter to get the root dir for fzf
+let g:rooter_manual_only = 1
