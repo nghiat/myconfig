@@ -104,6 +104,8 @@ else
 endif
 
 set tags=./tags;
+
+source ~/local.vimrc
 " Shortcuts
 " Press Space to turn off highlighting and clear any message already displayed.
 " noremap <Space> :set hlsearch! hlsearch?<CR>
