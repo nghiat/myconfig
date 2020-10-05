@@ -13,7 +13,7 @@
   "editor.autoClosingBrackets": "never",
   "editor.parameterHints": false,
   "editor.suggestOnTriggerCharacters": false,
-  "editor.renderWhitespace": true,
+  "editor.renderWhitespace": "all",
   "window.autoDetectColorScheme": false,
   // Add a line at 80 characters.
   "editor.rulers": [

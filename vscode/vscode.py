@@ -23,6 +23,7 @@ extension_ids = [
     "vscode-icons-team.vscode-icons",
     "vscodevim.vim",
     "xaver.clang-format",
+    "muuvmuuv.vscode-sundial",
 ]
 
 files = ["keybindings.json", "settings.json"]
