@@ -10,6 +10,7 @@
     "editorBracketMatch.border": "{DMatchBracketB}",
     "editorSuggestWidget.background": "{DCompletePopupB}",
     "editorSuggestWidget.foreground": "{DCompletePopupF}",
+    "editorWhitespace.foreground": "{DSpecialKeyF}",
   }},
   "tokenColors": [
     {{

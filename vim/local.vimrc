@@ -1,2 +1,0 @@
-" set tags+=C:/Program\\\ Files/Epic\\\ Games/UE_4.24/Engine/Source/tags
-" set tags+=C:/Program\\\ Files\\\ (x86)/Windows\\\ Kits/10/Include/10.0.18362.0/tags

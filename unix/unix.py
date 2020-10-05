@@ -1,4 +1,5 @@
-from scripts.subprocess_wrapper import run_script, run_command
+from scripts.file import copy_if_not_exist
+from scripts.subprocess_wrapper import run_command
 
 links = {
     "~/.bash_profile": ".bash_profile",
@@ -16,4 +17,4 @@ gem install tmuxinator'''
 
 def setup():
     run_command("git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm")
-    run_command("cp ~/myconfig/unix/.tmux_local.conf ~")
+    copy_if_not_exist(".tmux_local.conf", "~/.tmux_local.conf")

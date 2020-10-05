@@ -142,9 +142,9 @@
   ],
   "workbench.statusBar.feedback.visible": false,
   "vsicons.dontShowNewVersionMessage": true,
-  "python.unitTest.unittestEnabled": false,
-  "python.unitTest.pyTestEnabled": true,
-  "python.unitTest.nosetestsEnabled": false,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.nosetestsEnabled": false,
   "vsicons.projectDetection.disableDetect": true,
   "[json]": {
     "editor.defaultFormatter": "HookyQR.beautify"
@@ -157,5 +157,5 @@
   "sundial.sunset": "19:00",
   "workbench.preferredLightColorTheme": "ez",
   "workbench.preferredDarkColorTheme": "ez-dark",
-  "workbench.colorTheme": "ez-dark",
+  "workbench.colorTheme": "ez",
 }

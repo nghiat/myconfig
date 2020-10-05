@@ -1,6 +1,5 @@
 import os
-from os import path
-from shutil import copy2
+from scripts.file import copy_if_not_exist
 
 note = """fzf rg universal-ctags"""
 colors_templates = {
@@ -18,4 +17,4 @@ else:
 
 
 def setup():
-    copy2("local.vimrc", os.path.expanduser("~/local.vimrc"))
+    copy_if_not_exist("local.vimrc.template", "~/local.vimrc")

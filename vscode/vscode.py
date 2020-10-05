@@ -20,7 +20,7 @@ extension_ids = [
     "ms-python.python",
     "ms-vscode.cpptools",
     "npclaudiu.vscode-gn",
-    "robertohuertasm.vscode-icons",
+    "vscode-icons-team.vscode-icons",
     "vscodevim.vim",
     "xaver.clang-format",
 ]

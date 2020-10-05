@@ -7,8 +7,8 @@ let g:switch_background = 1
 func! EZSetBackground()
   let l:main_background = "light"
   let l:other_background = "dark"
-  let l:start = 8
-  let l:end = 19
+  let l:start = g:ez_sunrise
+  let l:end = g:ez_sunset
 
   let l:H = str2nr(strftime("%H"))
   if l:H >= l:start && l:H < l:end
@@ -38,4 +38,3 @@ func! EZSetBackground()
 endfunc
 
 call EZSetBackground()
-

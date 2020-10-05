@@ -106,7 +106,9 @@ endif
 
 set tags=./tags;
 
-source ~/local.vimrc
+if filereadable(expand("~/local.vimrc"))
+  source ~/local.vimrc
+endif
 " Shortcuts
 " Press Space to turn off highlighting and clear any message already displayed.
 " noremap <Space> :set hlsearch! hlsearch?<CR>

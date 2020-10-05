@@ -1,5 +1,4 @@
-from scripts.envvar import set_envvar
-from scripts.subprocess_wrapper import run_command
+from scripts.file import copy_if_not_exist
 import os
 
 colors_templates = {
@@ -16,9 +15,4 @@ hunspell en-us de-de-frami fr"""
 
 
 def setup():
-    if os.name == "nt":
-        run_command(
-            "copy .emacs.d/init.d/init-local.el.template .emacs.d/init.d/init-local.el")
-    else:
-        run_command(
-            "cp .emacs.d/init.d/init-local.el.template .emacs.d/init.d/init-local.el")
+    copy_if_not_exist(".emacs.d/init.d/init-local.el.template", ".emacs.d/init.d/init-local.el")
