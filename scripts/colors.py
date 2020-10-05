@@ -17,7 +17,7 @@ colors256 = {
     "tLMaxColumnB": "254", "LMaxColumnB": "#e4e4e4",
     "tLCompletePopupB": "254", "LCompletePopupB": "#e4e4e4",
     "tLCompletePopupF": "0", "LCompletePopupF": "#000000",
-    "tLSpecialKeyF": "254", "LSpecialKeyF": "#e4e4e4",
+    "tLSpecialKeyF": "251", "LSpecialKeyF": "#c6c6c6",
     # Dark
     "tDB": "234", "DB": "#1c1c1c",
     "tDF": "253", "DF": "#dadada",
