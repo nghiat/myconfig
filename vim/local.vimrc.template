@@ -1,5 +1,5 @@
-set ez_sunrise = 8
-set ez_sunset = 19
+let ez_sunrise = 8
+let ez_sunset = 19
 
 " set tags+=C:/Program\\\ Files/Epic\\\ Games/UE_4.24/Engine/Source/tags
 " set tags+=C:/Program\\\ Files\\\ (x86)/Windows\\\ Kits/10/Include/10.0.18362.0/tags
