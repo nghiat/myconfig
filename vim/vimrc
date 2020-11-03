@@ -66,7 +66,8 @@ elseif has("unix")
 endif
 "window default size
 if has('gui_running')
-    set columns=100
+    set lines=999
+    set columns=999
 endif
 "Color scheme
 if has("unix")
