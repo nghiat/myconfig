@@ -45,6 +45,7 @@ set list
 set listchars=tab:\ \ >,space:\.,extends:>
 set incsearch
 set notimeout
+set nowrap
 " Show line, column number
 set ruler
 "identation tab
