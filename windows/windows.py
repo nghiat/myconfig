@@ -30,7 +30,7 @@ colors_templates = {
 }
 
 links = {
-    "~/.vimrc": "vimrc",
+    "~/.vsvimrc": ".vsvimrc",
 }
 
 def setup():
