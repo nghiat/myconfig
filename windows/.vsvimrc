@@ -1,1 +1,5 @@
 set clipboard=unnamed
+set ignorecase
+set incsearch
+set smartcase
+set wildignorecase
