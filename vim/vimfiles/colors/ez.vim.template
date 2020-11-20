@@ -42,7 +42,7 @@ if &background == "light"
   highlight String ctermfg={tLStringF} guifg={LStringF}
   highlight SpecialChar ctermfg={tLStringF} guifg={LStringF}
   " listchars
-  highlight ExtraWhitespace ctermfg={tLSpecialKeyF} guifg={LSpecialKeyF}
+  highlight ExtraWhitespace ctermbg={tLRed} ctermfg={tLSpecialKeyF} guibg={LRed} guifg={LSpecialKeyF}
   highlight NonText ctermfg={tLSpecialKeyF} guifg={LSpecialKeyF}
   highlight SpecialKey ctermfg={tLSpecialKeyF} guifg={LSpecialKeyF}
 
@@ -59,7 +59,7 @@ else
   highlight String ctermfg={tDStringF} guifg={DStringF}
   highlight SpecialChar ctermfg={tDStringF} guifg={DStringF}
   " listchars
-  highlight ExtraWhitespace ctermfg={tDSpecialKeyF} guifg={DSpecialKeyF}
+  highlight ExtraWhitespace ctermbg={tLRed} ctermfg={tDSpecialKeyF} guibg={LRed} guifg={DSpecialKeyF}
   highlight NonText ctermfg={tDSpecialKeyF} guifg={DSpecialKeyF}
   highlight SpecialKey ctermfg={tDSpecialKeyF} guifg={DSpecialKeyF}
 

@@ -36,7 +36,7 @@ colors256 = {
     # Terminal usually uses color name Black, White, etc.
     "LBlack": "#000000",
     "LWhite": "#ffffff",
-    "LRed": "#800000",
+    "tLRed": "1", "LRed": "#800000",
     "LGreen": "#008000",
     "LBlue": "#0000ff",
     "LYellow": "#808000",
