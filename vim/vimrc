@@ -173,6 +173,7 @@ let g:fzf_colors =
     \ 'fg+': ['fg', 'Normal'],
     \ 'bg+': ['bg', 'CursorLine'],
     \ 'hl+': ['hl', 'Search']}
+let g:fzf_layout = { 'down': '40%' }
 command! -nargs=* Rg
     \ call fzf#vim#grep(
     \ 'rg --column --line-number --no-heading --smart-case --color=always ' . <q-args>,
