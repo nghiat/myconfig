@@ -115,9 +115,9 @@ endif
 " Press Space to turn off highlighting and clear any message already displayed.
 " noremap <Space> :set hlsearch! hlsearch?<CR>
 "map Ctrl-S to save
-nnoremap <silent> <C-s> :update<CR>
-vnoremap <silent> <C-s> <C-c>:update<CR>
-inoremap <silent> <C-s> <C-o>:update<CR>
+nnoremap <silent> <C-s> :update!<CR>
+vnoremap <silent> <C-s> <C-c>:update!<CR>
+inoremap <silent> <C-s> <C-o>:update!<CR>
 "Set Leader key
 let mapleader="\<Space>"
 noremap <leader>h <C-W>h
