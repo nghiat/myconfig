@@ -218,3 +218,7 @@ let g:localvimrc_event = "BufEnter"
 """"""""""vim-rooter""""""""""
 " We only use vim-rooter to get the root dir for fzf
 let g:rooter_manual_only = 1
+
+""""""""""vim-gutentags""""""""""
+let g:gutentags_project_root = ['.lvimrc', '.gutctags']
+let g:gutentags_add_default_project_roots = 0
