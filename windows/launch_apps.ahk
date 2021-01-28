@@ -11,8 +11,8 @@
   Run, "runemacs.exe"
   Return
 #Return::
-  Run, "cmd.exe"
+  Run, "cmd.exe" /c start /max cmd.exe
   Return
 #x::
-  Run, "gvim.exe"
+  Run, "cmd.exe" /c start /max gvim.exe
   Return
