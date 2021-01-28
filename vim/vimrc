@@ -139,6 +139,11 @@ if v:version >= 700
     au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 endif
 autocmd FileType gn noremap <Leader>f :py3f ~/myconfig/vim/gn-format.py<CR>
+" Copy path to clipboard
+" filename
+noremap <leader>nn :let @+ = expand("%:t") \| echo @+ . " Copied to clipboard"<CR>
+" full path
+noremap <leader>nf :let @+ = expand("%:p") \| echo @+ . " Copied to clipboard"<CR>
 
 " Perfocrce commands.
 command P4e silent execute "!start p4 edit %"
