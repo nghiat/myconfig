@@ -9,9 +9,12 @@ colors_templates = {
 links = {
     "~/.emacs.d": ".emacs.d",
 }
+if os.name == "nt":
+    links["%APPDATA%/.emacs.d"] = ".emacs.d"
 
 note = """pip install yapf flake8
-hunspell en-us de-de-frami fr"""
+hunspell en-us de-de-frami fr
+Not sure about .emacs.d on Windows, it can either be ~ or APPDATA"""
 
 
 def setup():

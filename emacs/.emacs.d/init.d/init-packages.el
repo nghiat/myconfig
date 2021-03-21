@@ -159,9 +159,7 @@
            "vd" 'magit-diff-buffer-file
            "vf" 'magit-pull
            "vp" 'magit-push
-           "vs" 'magit-status)
-  :config
-  (use-package evil-magit))
+           "vs" 'magit-status))
 
 (use-package projectile
   :defer t

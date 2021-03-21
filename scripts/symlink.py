@@ -14,6 +14,7 @@ def is_symlink_need_root(symlink):
 def create_symlink(target, symlink):
     target = os.path.abspath(target)
     expanded_symlink = os.path.expanduser(symlink)
+    expanded_symlink = os.path.expandvars(expanded_symlink)
     symlink_prefix = expanded_symlink[:expanded_symlink.rfind(
         os.path.basename(expanded_symlink))]
     if is_symlink_need_root(symlink):

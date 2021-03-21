@@ -5,7 +5,6 @@ import subprocess
 def run_command(args):
     shell_exec = os.getenv("SHELL")
     sp = subprocess.Popen(args,
-                          executable=shell_exec,
                           shell=True,
                           stdout=subprocess.PIPE,
                           stderr=subprocess.STDOUT)
