@@ -158,6 +158,7 @@ vnoremap <silent> <leader>s <C-c>:FastSwitch<CR>
 autocmd FileType c,cpp,objc,objcpp vnoremap <buffer><Leader>f :ClangFormat<CR>
 
 """"""""""fzf""""""""""
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden -g "!.git" '
 nnoremap <leader>p<Space> :GFiles<CR>
 vnoremap <leader>p<Space> <C-c>:GFiles<CR>
 nnoremap <leader>e :Files .<CR>
@@ -182,13 +183,13 @@ let g:fzf_colors =
 let g:fzf_layout = { 'down': '40%' }
 command! -nargs=* Rg
     \ call fzf#vim#grep(
-    \ 'rg --column --line-number --no-heading --smart-case --color=always ' . <q-args>,
+    \ 'rg --hidden --column --line-number --no-heading --smart-case --color=always ' . <q-args>,
     \ 1,
     \ 0)
 
 function s:RgFromRoot(params)
     call fzf#vim#grep(
-        \ 'rg --column --line-number --no-heading --smart-case --color=always ' . a:params,
+        \ 'rg --hidden --column --line-number --no-heading --smart-case --color=always ' . a:params,
         \ 1,
         \ {'dir': system('git rev-parse --show-toplevel')[:-2]},
         \ 0)
