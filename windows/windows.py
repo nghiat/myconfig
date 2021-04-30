@@ -15,6 +15,7 @@ Task Scheduler:
 Visual Studio:
   - Color Theme Editor
   - nghiatt.vssettings
+  - Disable git, IntelliSense
 
 FreeCommanderXE: Settings -> Shell Menu
 
