@@ -4,7 +4,8 @@ from scripts.subprocess_wrapper import run_command
 note = """clink
 autohotkey
 vcxsrv
-chocolatey procexp
+chocolatey processhacker strawberryperl
+Put perl bin dir before git/bin in PATH because fzf :Tags doesn't work well with perl from git
 https://tuxproject.de/projects/vim/
 
 Ultimate Windows Tweaker -> Customization -> This PC
