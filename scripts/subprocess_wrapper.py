@@ -8,6 +8,7 @@ def run_command(args):
                           shell=True,
                           stdout=subprocess.PIPE,
                           stderr=subprocess.STDOUT)
+    print("Running: " + args)
     print(sp.communicate()[0].decode("utf-8", "ignore"))
 
 
