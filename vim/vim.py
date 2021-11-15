@@ -17,4 +17,6 @@ else:
 
 
 def setup():
+    if not os.path.exists("vimfiles/swap"):
+        os.mkdir("vimfiles/swap")
     copy_if_not_exist("local.vimrc.template", "~/local.vimrc")
