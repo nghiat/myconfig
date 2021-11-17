@@ -14,7 +14,8 @@ links = {
 note = '''
 hibernate:
 - /etc/default/grub: GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID={value in fstab}" -> grub-mkconfig
-- /etc/mkinitcpio.conf: add resume hook after udev -> mkinitcpio -p linux
+- Arch: /etc/mkinitcpio.conf: add resume hook after udev -> mkinitcpio -p linux
+- Ubuntu: install: pm-utils hibernate and google
 GRUB default:
   GRUB_DEFAULT=saved
   GRUB_SAVEDEFAULT=true
