@@ -100,10 +100,13 @@ set statusline+=\ (%c\ %l\/%L)
 
 " See vim.py
 " // to make vim use absolute paths
+set backupdir-=.
 if has("win32")
   set directory=~/vimfiles/swap//
+  set backupdir^=~/vimfiles/backup//
 else
   set directory=~/.vim/swap//
+  set backupdir^=~/.vim/backup//
 endif
 
 set tags=./tags;
@@ -128,6 +131,7 @@ noremap <leader>wc :close<CR>
 noremap <leader>wo :only<CR>
 noremap <leader>wv :vs<CR>
 noremap <leader>wh :sp<CR>
+noremap <leader>wd :bd<CR>
 noremap <leader>bd :bp\|bd #<CR>
 " Switch to most recent buffer
 nnoremap <silent> <leader>o :b#<CR>
@@ -158,7 +162,7 @@ vnoremap <silent> <leader>s <C-c>:FastSwitch<CR>
 autocmd FileType c,cpp,objc,objcpp vnoremap <buffer><Leader>f :ClangFormat<CR>
 
 """"""""""fzf""""""""""
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden -g "!.git" '
+let $FZF_DEFAULT_COMMAND = 'rg --no-ignore --files --hidden -g "!.git" '
 nnoremap <leader>p<Space> :GFiles<CR>
 vnoremap <leader>p<Space> <C-c>:GFiles<CR>
 nnoremap <leader>e :Files .<CR>
@@ -167,6 +171,9 @@ nnoremap <leader>; :Buffers<CR>
 vnoremap <leader>; <C-c>:Buffers<CR>
 nnoremap <leader>r :History<CR>
 vnoremap <leader>r <C-c>:History<CR>
+" Find tags of current word
+nnoremap <leader>tw :Tags <C-r><C-w><CR>
+vnoremap <leader>tw <C-c>:Tags <C-r><C-w><CR>
 
 nnoremap <leader>pr :execute "Files" FindRootDirectory()<CR>
 vnoremap <leader>pr <C-c>:execute "Files" FindRootDirectory()<CR>
@@ -183,7 +190,7 @@ let g:fzf_colors =
 let g:fzf_layout = { 'down': '40%' }
 command! -nargs=* Rg
     \ call fzf#vim#grep(
-    \ 'rg --hidden --column --line-number --no-heading --smart-case --color=always ' . <q-args>,
+    \ 'rg --no-ignore --hidden --column --line-number --no-heading --smart-case --color=always ' . <q-args>,
     \ 1,
     \ 0)
 
@@ -191,14 +198,16 @@ function s:RgFromRoot(params)
     call fzf#vim#grep(
         \ 'rg --hidden --column --line-number --no-heading --smart-case --color=always ' . a:params,
         \ 1,
-        \ {'dir': system('git rev-parse --show-toplevel')[:-2]},
+        \ {'dir': FindRootDirectory()},
         \ 0)
 endfunction
 
 command! -nargs=* Rb call fzf#vim#files(system('git rev-parse --show-toplevel')[:-2])
 command! -nargs=* Rgg call s:RgFromRoot(<q-args>)
 command! -nargs=* Rgc call s:RgFromRoot('-t cpp ' . <q-args>)
+command! -nargs=* Rgcs call s:RgFromRoot('-t cs ' . <q-args>)
 command! -nargs=* Rgl call s:RgFromRoot('--no-ignore -t lua ' . <q-args>)
+command! -nargs=* Rggn call s:RgFromRoot('-t gn ' . <q-args>)
 
 """"""""""fugitive""""""""""
 nnoremap <leader>vd :Gdiff<CR>
