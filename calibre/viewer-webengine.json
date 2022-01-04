@@ -1,0 +1,14 @@
+{
+  "lookup_locations": [
+    {
+      "langs": [],
+      "name": "linguee",
+      "url": "https://www.linguee.de/deutsch-englisch/search?source=auto&query={word}"
+    },
+    {
+      "langs": [],
+      "name": "Google Translate de-en",
+      "url": "https://translate.google.com/?sl=de&tl=en&text={word}&op=translate"
+    }
+  ]
+}
