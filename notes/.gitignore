@@ -1,0 +1,13 @@
+# ignore everything
+*
+
+# except folders
+!*/
+
+# and files with these extensions
+!*.txt1
+
+# but not in directories named 3rd
+**/3rd
+# and directories named 3rd*
+**/3rd*
