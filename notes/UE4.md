@@ -12,6 +12,8 @@ UE4Editor.exe ${projectpath} -diff %1 %2
 ```
 stat fps
 stat unit
+E:/g2/UE4/Engine/Binaries/Win64/UE4Editor.exe E:/path/to/uproject -run=DerivedDataCache -fill -DDC=CreatePak
+Command line: -ExecCmds="stat unit" -LogCmds="LogOnlineVoice verbose"
 ```
 
 # .lvimrc

@@ -2,6 +2,8 @@
 ```
 -R
 --languages=C++,C#
+#Enable parsing function declarations
+--kinds-C++=+p
 --exclude=ThirdParty
 --exclude=Intermediate
 --exclude-exception=*PS4\*
