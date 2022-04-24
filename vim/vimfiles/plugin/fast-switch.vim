@@ -14,28 +14,39 @@ function! s:FastSwitchFrom(fullPathWithoutExt, ext, fromExts, toExts)
       endif
     endfor
 
-    let pair = [ "Public", "Private"]
-    for i in [0, 1]
-      let folder1 = pair[i]
-      let folder2 = pair[1 - i]
-      if has("win32")
-        let slash = '\'
-      else
-        let slash = '/'
-      endif
-      let newFolder1 = slash . folder1 . slash
-      let newFolder2 = slash . folder2 . slash
-      if stridx(a:fullPathWithoutExt, newFolder1) > -1
-        for toExt in a:toExts
-          let otherFile = substitute(a:fullPathWithoutExt, newFolder1, newFolder2, "") . toExt
-          if filereadable(otherFile)
-            execute 'edit' otherFile
-            return 1
-          endif
-        endfor
-      endif
+    if has("win32")
+      let slash = '\'
+    else
+      let slash = '/'
+    endif
+    let pairs = [
+      \[ "Public", "Private"],
+      \[ "Classes", "Private"],
+      \[ "Classes" . slash . "Engine", "Private"],
+      \[ "Classes" . slash . "GameFramework", "Private"],
+      \[ "Classes" . slash . "GameFramework", "Private" . slash . "Components"],
+      \]
+    for pair in pairs
+      for i in [0, 1]
+        let folder1 = pair[i]
+        let folder2 = pair[1 - i]
+        let folder1Slashed = slash . folder1 . slash
+        let folder2Slashed = slash . folder2 . slash
+        " Read substitute docs
+        " Don't ask me why we need 8 slashes
+        let folder1DoubleSlashed = substitute(folder1Slashed, "\\\\", "\\\\\\\\", "g")
+        let folder2DoubleSlashed = substitute(folder2Slashed, "\\\\", "\\\\\\\\", "g")
+        if stridx(a:fullPathWithoutExt, folder1Slashed) > -1
+          for toExt in a:toExts
+            let otherFile = substitute(a:fullPathWithoutExt, folder1DoubleSlashed, folder2DoubleSlashed, "") . toExt
+            if filereadable(otherFile)
+              execute 'edit' otherFile
+              return 1
+            endif
+          endfor
+        endif
+      endfor
     endfor
-
   endif
 
   return 0
