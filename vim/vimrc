@@ -14,6 +14,9 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'embear/vim-localvimrc'
 Plug 'nfvs/vim-perforce'
 Plug 'airblade/vim-rooter'
+Plug 'beyondmarc/hlsl.vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
 " All of your Plugs must be added before the following line
 call plug#end()            " required
 """"""""""Vim config""""""""""
@@ -136,6 +139,11 @@ noremap <leader>bd :bp\|bd #<CR>
 " Switch to most recent buffer
 nnoremap <silent> <leader>o :b#<CR>
 vnoremap <silent> <leader>o <C-c>:b#<CR>
+"Quickfix
+nnoremap <silent> <leader>ln :cn<CR>
+vnoremap <silent> <leader>ln <C-c>:cn<CR>
+nnoremap <silent> <leader>lp :cp<CR>
+vnoremap <silent> <leader>lp <C-c>:cp<CR>
 " Preserve cursor position when switching between buffers.
 " https://stackoverflow.com/questions/4251533/vim-keep-window-position-when-switching-buffers
 if v:version >= 700
@@ -192,6 +200,7 @@ command! -nargs=* Rg
     \ call fzf#vim#grep(
     \ 'rg --no-ignore --hidden --column --line-number --no-heading --smart-case --color=always ' . <q-args>,
     \ 1,
+    \ {'options': fzf#vim#with_preview()["options"] + ['--bind', 'ctrl-a:select-all,ctrl-d:deselect-all']},
     \ 0)
 
 function s:RgFromRoot(params)
@@ -238,3 +247,17 @@ let g:rooter_manual_only = 1
 """"""""""vim-gutentags""""""""""
 let g:gutentags_project_root = ['.lvimrc', '.gutctags']
 let g:gutentags_add_default_project_roots = 0
+
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/vim-lsp.log')
+let g:compile_commands_dir = ''
+if executable('clangd')
+    augroup lsp_clangduu
+        autocmd!
+        autocmd User lsp_setup call lsp#register_server({
+                    \ 'name': 'clangd',
+                    \ 'cmd': {server_info->['clangd', '--compile-commands-dir', g:compile_commands_dir]},
+                    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+                    \ })
+    augroup end
+endif
