@@ -1,3 +1,8 @@
+# compile_commands.json
+```
+"D:\Games\UE_5.0\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.exe" -mode=GenerateClangDatabase -project=d:\projects\eins\eins.uproject eins Development Win64
+```
+
 # Diff
 ```
 UE4Editor.exe ${projectpath} -diff %1 %2
