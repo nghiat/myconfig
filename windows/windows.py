@@ -1,7 +1,7 @@
 import os
 from scripts.subprocess_wrapper import run_command
 
-note = """clink
+note = """clink (github)
 autohotkey
 vcxsrv
 chocolatey processhacker strawberryperl
