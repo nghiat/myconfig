@@ -1,3 +1,11 @@
+# .clangd
+```
+CompileFlags:
+  CompilationDatabase: out/debug
+Index:
+  Background: Skip
+```
+
 # .gutctags
 ```
 -R
