@@ -249,24 +249,25 @@ let g:gutentags_project_root = ['.lvimrc', '.gutctags']
 let g:gutentags_add_default_project_roots = 0
 
 """"""""""vim-lsp""""""""""
-function! s:find_root_uri(server_name) abort
+function! Find_root_uri(server_name) abort
   return FindRootDirectory()
 endfunction
 
+let g:lsp_preview_float = 0
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('~/vim-lsp.log')
 let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_echo_delay = 50
+let g:lsp_signature_help_enabled = 0
 
-let g:clangd_compile_commands_dir = ''
-let g:clangd_j = '4'
 if executable('clangd')
     augroup lsp_clangd
         autocmd!
         autocmd User lsp_setup call lsp#register_server({
                     \ 'name': 'clangd',
-                    \ 'cmd': {server_info->['clangd', '--compile-commands-dir', g:clangd_compile_commands_dir, '-j='.g:clangd_j]},
+                    \ 'cmd': {server_info->['clangd']},
                     \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-                    \ 'root_uri': function('s:find_root_uri'),
+                    \ 'root_uri': function('Find_root_uri'),
                     \ })
     augroup end
 endif
