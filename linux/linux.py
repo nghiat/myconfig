@@ -20,11 +20,8 @@ GRUB default:
   GRUB_DEFAULT=saved
   GRUB_SAVEDEFAULT=true
 
-xsel
-urxvt (or rxvt-unicode)
 redshift
 python-xdg
-xbindkeys
 mpv
 bash-completion
 ibus: Ubuntu im-config, Untick Use system keyboard layout
@@ -42,3 +39,4 @@ def setup():
     run_command("echo kernel.yama.ptrace_scope=0 | sudo tee /etc/sysctl.d/10-ptrace.conf > /dev/null")
     run_command("cp .Xdefaults.dpi ~")
     run_command("sudo systemctl enable systemd-timesyncd")
+    run_script("install.sh")

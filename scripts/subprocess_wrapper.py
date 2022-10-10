@@ -14,5 +14,4 @@ def run_command(args):
 
 def run_script(script_path):
     abs_path = os.path.abspath(script_path)
-    print("Running script: " + abs_path)
     run_command(abs_path)
