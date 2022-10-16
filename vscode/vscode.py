@@ -24,6 +24,7 @@ extension_ids = [
     "vscodevim.vim",
     "xaver.clang-format",
     "muuvmuuv.vscode-sundial",
+    "ms-vscode.hexeditor",
 ]
 
 files = ["keybindings.json", "settings.json"]
