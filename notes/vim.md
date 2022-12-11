@@ -24,7 +24,7 @@ if &ft == "lua"
 elseif &ft == "cpp"
   setlocal expandtab
 endif
-
+" Don't use double quotes around path
 set tags+=C:/Program\\\ Files/Epic\\\ Games/UE_4.24/Engine/Source/tags
 noremap <F9> :terminal ++shell ninja64.exe -C d:/projects/ngen/out/debug dx12_sample<CR>
 inoremap <F9> <C-O>:terminal ++shell ninja64.exe -C d:/projects/ngen/out/debug dx12_sample<CR>
