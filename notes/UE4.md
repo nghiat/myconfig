@@ -60,8 +60,9 @@ noremap <F9> :terminal ++shell D:/projects/UnrealEngine/Engine/Build/BatchFiles/
 **/Intermediate*
 ```
 
-# .gutctags
+# .gutctags or ctags --options=...
 ```
+-R
 --languages=C++,C#
 --exclude=ThirdParty
 --exclude=Intermediate
