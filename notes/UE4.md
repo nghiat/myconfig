@@ -19,6 +19,7 @@ stat fps
 stat unit
 E:/g2/UE4/Engine/Binaries/Win64/UE4Editor.exe E:/path/to/uproject -run=DerivedDataCache -fill -DDC=CreatePak
 Command line: -ExecCmds="stat unit" -LogCmds="LogOnlineVoice verbose"
+If using P4, comment all the git things in SourceFileWorkingSet.cs (probably just commenting TryCreateGitWorkingSet is enough)
 ```
 
 # .lvimrc
