@@ -43,7 +43,7 @@ set expandtab
 set foldmethod=manual
 set guicursor+=a:blinkon0
 set hidden
-set history=1000
+set history=300
 set list
 set listchars=tab:\ \ >,space:\.,extends:>
 set incsearch
@@ -56,7 +56,8 @@ set shiftwidth=2
 "makes the backspace key treat the spaces like a tab
 set softtabstop=2
 set tabstop=2
-set viminfo='1000,<1000,:1000,s10,h
+"help 'viminfo' not help viminfo
+set viminfo='300,<50,:300,s10,h
 set belloff=all
 set wildcharm=<Tab>
 set wildmenu
@@ -258,6 +259,7 @@ let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('~/vim-lsp.log')
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_diagnostics_echo_delay = 50
+let g:lsp_diagnostics_virtual_text_enabled = 0
 let g:lsp_signature_help_enabled = 0
 
 if executable('clangd')
