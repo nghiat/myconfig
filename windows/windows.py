@@ -25,6 +25,7 @@ HiDPI:
   + FreeCommander.exe
 
 Windows 10: Settings -> Accounts -> Sign-in options -> Disble "Use my sign-in info ..."
+clink set clink.default_bindings bash
 """
 
 colors_templates = {
