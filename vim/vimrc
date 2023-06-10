@@ -204,20 +204,21 @@ command! -nargs=* Rg
     \ {'options': fzf#vim#with_preview()["options"] + ['--bind', 'ctrl-a:select-all,ctrl-d:deselect-all']},
     \ 0)
 
-function s:RgFromRoot(params)
+let g:additional_rg_dirs = ''
+function s:RgFromRoot(params, dirs)
     call fzf#vim#grep(
-        \ 'rg --hidden --column --line-number --no-heading --smart-case --color=always ' . a:params,
+        \ 'rg --hidden --column --line-number --no-heading --smart-case --color=always ' . a:params . ' ' . FindRootDirectory() . ' ' . a:dirs,
         \ 1,
-        \ {'dir': FindRootDirectory()},
+        \ {},
         \ 0)
 endfunction
 
 command! -nargs=* Rb call fzf#vim#files(system('git rev-parse --show-toplevel')[:-2])
-command! -nargs=* Rgg call s:RgFromRoot(<q-args>)
-command! -nargs=* Rgc call s:RgFromRoot('-t cpp ' . <q-args>)
-command! -nargs=* Rgcs call s:RgFromRoot('-t cs ' . <q-args>)
-command! -nargs=* Rgl call s:RgFromRoot('--no-ignore -t lua ' . <q-args>)
-command! -nargs=* Rggn call s:RgFromRoot('-t gn ' . <q-args>)
+command! -nargs=* Rgg call s:RgFromRoot(<q-args>, g:additional_rg_dirs)
+command! -nargs=* Rgc call s:RgFromRoot('-t cpp ' . <q-args>, g:additional_rg_dirs)
+command! -nargs=* Rgcs call s:RgFromRoot('-t cs ' . <q-args>, g:additional_rg_dirs)
+command! -nargs=* Rgl call s:RgFromRoot('--no-ignore -t lua ' . <q-args>, g:additional_rg_dirs)
+command! -nargs=* Rggn call s:RgFromRoot('-t gn ' . <q-args>, g:additional_rg_dirs)
 
 """"""""""fugitive""""""""""
 nnoremap <leader>vd :Gdiff<CR>
