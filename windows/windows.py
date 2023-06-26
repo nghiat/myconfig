@@ -26,6 +26,8 @@ HiDPI:
 
 Windows 10: Settings -> Accounts -> Sign-in options -> Disble "Use my sign-in info ..."
 clink set clink.default_bindings bash
+
+https://github.com/JacobMS2020/Old-Windows-10-context-menu
 """
 
 colors_templates = {
