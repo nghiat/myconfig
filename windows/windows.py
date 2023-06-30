@@ -2,9 +2,7 @@ import os
 from scripts.subprocess_wrapper import run_command
 
 note = """clink (github)
-autohotkey
 vcxsrv
-chocolatey processhacker strawberryperl
 Put perl bin dir before git/bin in PATH because fzf :Tags doesn't work well with perl from git
 https://tuxproject.de/projects/vim/
 
@@ -52,3 +50,5 @@ def setup():
     run_command('mkdir "%HOMEPATH%\\AppData\\Local\\FreeCommanderXE\\Settings"')
     run_command('copy "%HOMEPATH%\\myconfig\\windows\\FreeCommander.ini" "%HOMEPATH%\\AppData\\Local\\FreeCommanderXE\\Settings"')
     run_command('copy "%HOMEPATH%\\myconfig\\windows\\FreeCommander.shc" "%HOMEPATH%\\AppData\\Local\\FreeCommanderXE\\Settings"')
+    # choco
+    run_command('powershell -ExecutionPolicy Bypass -File {}'.format(os.path.join(current_folder, "chocolatey.ps1")))
