@@ -19,7 +19,7 @@ function! s:SetupHanoiServer()
   endwhile
 
   if len(projectRoot)
-    let output = system('cmd.exe /C start /MIN D:/projects/Hanoi/target/debug/Hanoi.exe --mode=server --root=' .. projectRoot)
+    let output = system('cmd.exe /C start /MIN Hanoi --mode=server --root=' .. projectRoot)
   endif
 endfunction
 
