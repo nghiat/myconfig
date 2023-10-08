@@ -115,6 +115,8 @@ endif
 
 set tags=./tags;
 
+set matchpairs+=<:>
+
 if filereadable(expand("~/local.vimrc"))
   source ~/local.vimrc
 endif
@@ -219,6 +221,12 @@ command! -nargs=* Rgc call s:RgFromRoot('-t cpp ' . <q-args>, g:additional_rg_di
 command! -nargs=* Rgcs call s:RgFromRoot('-t cs ' . <q-args>, g:additional_rg_dirs)
 command! -nargs=* Rgl call s:RgFromRoot('--no-ignore -t lua ' . <q-args>, g:additional_rg_dirs)
 command! -nargs=* Rggn call s:RgFromRoot('-t gn ' . <q-args>, g:additional_rg_dirs)
+command! -nargs=* Hn call fzf#vim#grep(
+        \ 'D:/projects/Hanoi/target/debug/Hanoi.exe ' . <q-args>,
+        \ 1,
+        \ {},
+        \ 0)
+
 
 """"""""""fugitive""""""""""
 nnoremap <leader>vd :Gdiff<CR>
@@ -274,3 +282,4 @@ if executable('clangd')
                     \ })
     augroup end
 endif
+
