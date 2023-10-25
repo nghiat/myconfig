@@ -140,6 +140,7 @@
       ]
     },
   ],
+  "C_Cpp.errorSquiggles": "Disabled",
   "workbench.statusBar.feedback.visible": false,
   "vsicons.dontShowNewVersionMessage": true,
   "python.testing.unittestEnabled": false,
@@ -157,5 +158,9 @@
   "sundial.sunset": "19:00",
   "workbench.preferredLightColorTheme": "ez",
   "workbench.preferredDarkColorTheme": "ez-dark",
-  "workbench.colorTheme": "ez",
+  "git.ignoreWindowsGit27Warning": true,
+  "C_Cpp.autocomplete": "Disabled",
+  "C_Cpp.intelliSenseEngine": "Disabled",
+  "git.openRepositoryInParentFolders": "never",
+  "debug.allowBreakpointsEverywhere": true,
 }
