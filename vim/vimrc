@@ -221,12 +221,11 @@ command! -nargs=* Rgc call s:RgFromRoot('-t cpp ' . <q-args>, g:additional_rg_di
 command! -nargs=* Rgcs call s:RgFromRoot('-t cs ' . <q-args>, g:additional_rg_dirs)
 command! -nargs=* Rgl call s:RgFromRoot('--no-ignore -t lua ' . <q-args>, g:additional_rg_dirs)
 command! -nargs=* Rggn call s:RgFromRoot('-t gn ' . <q-args>, g:additional_rg_dirs)
-command! -nargs=* Hn call fzf#vim#grep(
-        \ 'D:/projects/Hanoi/target/debug/Hanoi.exe ' . <q-args>,
-        \ 1,
-        \ {},
-        \ 0)
 
+command! -nargs=* Hn call fzf#vim#grep('Hanoi ' . <q-args>, 1, {}, 0)
+nnoremap <leader>gp :Hn "<C-r>+"<CR>
+nnoremap <leader>gw :Hn "<C-r><C-w>"<CR>
+command! -nargs=* Hng call fzf#run(fzf#wrap({'source': 'Hanoi --files'}))
 
 """"""""""fugitive""""""""""
 nnoremap <leader>vd :Gdiff<CR>
@@ -257,11 +256,14 @@ let g:rooter_manual_only = 1
 """"""""""vim-gutentags""""""""""
 let g:gutentags_project_root = ['.lvimrc', '.gutctags']
 let g:gutentags_add_default_project_roots = 0
+let g:gutentags_generate_on_new = 0
 
 """"""""""vim-lsp""""""""""
 function! Find_root_uri(server_name) abort
   return FindRootDirectory()
 endfunction
+
+nnoremap <leader>ld :LspDeclaration<CR>
 
 let g:lsp_preview_float = 0
 let g:lsp_log_verbose = 1

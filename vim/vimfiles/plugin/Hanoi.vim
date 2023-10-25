@@ -1,5 +1,5 @@
 function! s:SetupHanoiServer()
-  let fullPath = expand('%')
+  let fullPath = expand('%:p')
   let currParent = fnamemodify(fullPath, ':h')
   let projectRoot = ''
   let markers = [ '.git', '.gutctags' ]
@@ -10,7 +10,7 @@ function! s:SetupHanoiServer()
         break
       endif
     endfor
-    let newParent = fnamemodify(currParent, ':p:h')
+    let newParent = fnamemodify(currParent, ':h')
     if newParent == currParent
       break
     else
@@ -23,4 +23,4 @@ function! s:SetupHanoiServer()
   endif
 endfunction
 
-autocmd BufNewFile,BufReadPost *  call s:SetupHanoiServer()
+comm SetupHanoiServer call s:SetupHanoiServer()
