@@ -36,8 +36,10 @@ if &ft == "cs"
   setlocal noexpandtab
 endif
 
-noremap <F9> :terminal ++shell D:/projects/UnrealEngine/Engine/Build/BatchFiles/Build.bat MyProject Win64 Development D:/projects/MyProject/MyProject.uproject -waitmutex<CR>
-"noremap <F9> :terminal ++shell D:/projects/UnrealEngine/Engine/Build/BatchFiles/Build.bat MyProjectEditor Win64 Development D:/projects/MyProject/MyProject.uproject -waitmutex<CR>
+let s:dir = expand("<sfile>:p:h")
+
+execute 'noremap <F9> :terminal ++shell ' . s:dir . '/Engine/Build/BatchFiles/Build.bat MyProject Win64 Development D:/projects/MyProject/MyProject.uproject -waitmutex<CR>'
+"execute 'noremap <F9> :terminal ++shell ' . s:dir . '/Engine/Build/BatchFiles/Build.bat MyProjectEditor Win64 Development D:/projects/MyProject/MyProject.uproject -waitmutex<CR>'
 ```
 
 # .gitignore
