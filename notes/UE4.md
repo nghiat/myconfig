@@ -37,8 +37,10 @@ if &ft == "cs"
 endif
 
 let s:dir = expand("<sfile>:p:h")
+let s:current_file = expand("%:p")
 
 execute 'noremap <F9> :terminal ++shell ' . s:dir . '/Engine/Build/BatchFiles/Build.bat MyProject Win64 Development D:/projects/MyProject/MyProject.uproject -waitmutex<CR>'
+"execute 'noremap <F9> :terminal ++shell ' . s:dir . '/Engine/Build/BatchFiles/Build.bat MyProject Win64 Development D:/projects/MyProject/MyProject.uproject -WaitMutex -File=' . s:current_file . '<CR>'
 "execute 'noremap <F9> :terminal ++shell ' . s:dir . '/Engine/Build/BatchFiles/Build.bat MyProjectEditor Win64 Development D:/projects/MyProject/MyProject.uproject -waitmutex<CR>'
 ```
 
