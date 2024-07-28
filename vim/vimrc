@@ -17,6 +17,7 @@ Plug 'airblade/vim-rooter'
 Plug 'beyondmarc/hlsl.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 " All of your Plugs must be added before the following line
 call plug#end()            " required
 """"""""""Vim config""""""""""
@@ -48,7 +49,7 @@ set list
 set listchars=tab:\ \ >,space:\.,extends:>
 set incsearch
 set notimeout
-set nowrap
+set wrap
 " Show line, column number
 set ruler
 "identation tab
@@ -164,6 +165,11 @@ noremap <leader>nf :let @+ = expand("%:p") \| echo @+ . " Copied to clipboard"<C
 command P4e silent execute "!start p4 edit %"
 command P4d silent execute "!start p4 diff -f %"
 
+set completeopt=menu,menuone,noinsert
+" Show omnifunc when typing non-space characters
+inoremap <expr> <Tab> pumvisible() ? "\<C-y>"
+      \: (col('.') > 1 && getline('.')[col('.') - 2] !~# '\s') ? "\<C-x>\<C-o>" : "\<Tab>"
+
 """"""""""A""""""""""
 let g:alternateNoDefaultAlternate = 1
 nnoremap <silent> <leader>s :FastSwitch<CR>
@@ -265,41 +271,19 @@ endfunction
 
 nnoremap <leader>ld :LspDeclaration<CR>
 
-let g:lsp_preview_float = 0
+" let g:lsp_preview_float = 0
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('~/vim-lsp.log')
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_diagnostics_echo_delay = 50
 let g:lsp_diagnostics_virtual_text_enabled = 0
-let g:lsp_signature_help_enabled = 0
+" let g:lsp_signature_help_enabled = 0
 
-if executable('clangd')
-    augroup lsp_clangd
-        autocmd!
-        autocmd User lsp_setup call lsp#register_server({
-                    \ 'name': 'clangd',
-                    \ 'cmd': {server_info->['clangd']},
-                    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-                    \ 'root_uri': function('Find_root_uri'),
-                    \ })
-    augroup end
-endif
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+endfunction
 
-if executable('rust-analyzer')
-  au User lsp_setup call lsp#register_server({
-        \   'name': 'Rust Language Server',
-        \   'cmd': {server_info->['rust-analyzer']},
-        \   'whitelist': ['rust'],
-        \   'root_uri': function('Find_root_uri'),
-        \   'initialization_options': {
-        \     'cargo': {
-        \       'buildScripts': {
-        \         'enable': v:true,
-        \       },
-        \     },
-        \     'procMacro': {
-        \       'enable': v:true,
-        \     },
-        \   },
-        \ })
-endif
+augroup lsp_install
+    au!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
