@@ -25,6 +25,9 @@ set autoread
 set ignorecase
 set wildignorecase
 set smartcase
+" because * # doesn't use smartcase
+nnoremap * /\<<c-r><c-w>\><cr>
+nnoremap # ?\<<c-r><c-w>\><cr>
 " Plays nicer with fzf than autochdir
 autocmd BufEnter * silent! lcd %:p:h
 set autochdir
