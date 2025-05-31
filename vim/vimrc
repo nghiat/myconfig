@@ -116,6 +116,7 @@ else
   set directory=~/.vim/swap//
   set backupdir^=~/.vim/backup//
 endif
+set backupcopy=yes " Without this, saving file become delete and save, which doesn't work well with some app
 
 set tags=./tags;
 
