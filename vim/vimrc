@@ -118,6 +118,8 @@ else
 endif
 set backupcopy=yes " Without this, saving file become delete and save, which doesn't work well with some app
 
+set nofixendofline
+
 set tags=./tags;
 
 set matchpairs+=<:>
