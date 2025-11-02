@@ -26,6 +26,8 @@ HiDPI:
 
 Windows 10: Settings -> Accounts -> Sign-in options -> Disble "Use my sign-in info ..."
 clink set clink.default_bindings bash
+
+Start -> Type something -> Indexing option
 """
 
 colors_templates = {
